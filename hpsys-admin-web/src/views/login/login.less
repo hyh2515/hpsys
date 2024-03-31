@@ -1,0 +1,57 @@
+.login-icon-gray {
+	color: rgba(0, 0, 0, 0.25);
+}
+.login-bgc {
+	width: 100%;
+	min-height: 100vh;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center;
+	background-image: url(/src/assets/img/login_bgc.png);
+}
+.login-main {
+	flex: 1;
+	overflow: auto;
+	display: flex;
+}
+.login-form {
+	top: 15%;
+	right: 30%;
+	position: absolute;
+	width: 450px;
+	margin-left: 10%;
+	margin-top: 20px;
+	padding: 10px 0;
+}
+.login-header {
+	margin-bottom: 20px;
+}
+.login-header .logo {
+	display: flex;
+	align-items: center;
+}
+.login-header .logo img {
+	width: 35px;
+	height: 35px;
+	vertical-align: bottom;
+	margin-right: 10px;
+}
+.login-header .logo label {
+	font-size: 24px;
+}
+@media (max-width: 1200px) {
+	.login-form {
+		width: 340px;
+	}
+}
+@media (max-width: 1000px) {
+	.login-main {
+		display: block;
+	}
+	.login-form {
+		width: 100%;
+		padding: 20px 40px;
+		right: 0 !important;
+		top: 0 !important;
+	}
+}

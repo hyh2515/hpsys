@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_4" xmlns:data="http://jpmml.org/jpmml-model/InlineTable" version="4.4">
+	<Header>
+		<Application name="SkLearn2PMML package" version="0.105.0"/>
+		<Timestamp>2024-03-29T02:33:30Z</Timestamp>
+	</Header>
+	<MiningBuildTask>
+		<Extension name="repr">PMMLPipeline(steps=[('mapper', DataFrameMapper(drop_cols=[],
+                features=[(['coordinateX', 'coordinateY', 'decorationCondition',
+                            'deed', 'elevator', 'facility0', 'facility1',
+                            'facility2', 'facility3', 'facility4', 'facility5',
+                            'level', 'total', 'framework', 'houseTerm',
+                            'ownership', 'purpose', 'apt', 'lift', 'district',
+                            'rights', 'scale', 'structure', 'bath', 'kitchen',
+                            'room', 'saloon'],
+                           StandardScaler())])),
+       ('line', LinearRegression())])</Extension>
+	</MiningBuildTask>
+	<DataDictionary>
+		<DataField name="price" optype="continuous" dataType="double"/>
+		<DataField name="coordinateX" optype="continuous" dataType="double"/>
+		<DataField name="coordinateY" optype="continuous" dataType="double"/>
+		<DataField name="decorationCondition" optype="continuous" dataType="double"/>
+		<DataField name="deed" optype="continuous" dataType="double"/>
+		<DataField name="elevator" optype="continuous" dataType="double"/>
+		<DataField name="facility0" optype="continuous" dataType="double"/>
+		<DataField name="facility1" optype="continuous" dataType="double"/>
+		<DataField name="facility2" optype="continuous" dataType="double"/>
+		<DataField name="facility3" optype="continuous" dataType="double"/>
+		<DataField name="facility4" optype="continuous" dataType="double"/>
+		<DataField name="facility5" optype="continuous" dataType="double"/>
+		<DataField name="level" optype="continuous" dataType="double"/>
+		<DataField name="total" optype="continuous" dataType="double"/>
+		<DataField name="framework" optype="continuous" dataType="double"/>
+		<DataField name="houseTerm" optype="continuous" dataType="double"/>
+		<DataField name="ownership" optype="continuous" dataType="double"/>
+		<DataField name="purpose" optype="continuous" dataType="double"/>
+		<DataField name="apt" optype="continuous" dataType="double"/>
+		<DataField name="lift" optype="continuous" dataType="double"/>
+		<DataField name="district" optype="continuous" dataType="double"/>
+		<DataField name="rights" optype="continuous" dataType="double"/>
+		<DataField name="scale" optype="continuous" dataType="double"/>
+		<DataField name="structure" optype="continuous" dataType="double"/>
+		<DataField name="bath" optype="continuous" dataType="double"/>
+		<DataField name="kitchen" optype="continuous" dataType="double"/>
+		<DataField name="room" optype="continuous" dataType="double"/>
+		<DataField name="saloon" optype="continuous" dataType="double"/>
+	</DataDictionary>
+	<RegressionModel functionName="regression" algorithmName="sklearn.linear_model._base.LinearRegression">
+		<MiningSchema>
+			<MiningField name="price" usageType="target"/>
+			<MiningField name="coordinateX"/>
+			<MiningField name="coordinateY"/>
+			<MiningField name="decorationCondition"/>
+			<MiningField name="deed"/>
+			<MiningField name="elevator"/>
+			<MiningField name="facility0"/>
+			<MiningField name="facility1"/>
+			<MiningField name="facility2"/>
+			<MiningField name="facility3"/>
+			<MiningField name="facility4"/>
+			<MiningField name="facility5"/>
+			<MiningField name="level"/>
+			<MiningField name="total"/>
+			<MiningField name="framework"/>
+			<MiningField name="houseTerm"/>
+			<MiningField name="ownership"/>
+			<MiningField name="purpose"/>
+			<MiningField name="apt"/>
+			<MiningField name="lift"/>
+			<MiningField name="district"/>
+			<MiningField name="rights"/>
+			<MiningField name="scale"/>
+			<MiningField name="structure"/>
+			<MiningField name="bath"/>
+			<MiningField name="kitchen"/>
+			<MiningField name="room"/>
+			<MiningField name="saloon"/>
+		</MiningSchema>
+		<LocalTransformations>
+			<DerivedField name="standardScaler(coordinateX)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="coordinateX"/>
+						<Constant dataType="double">121.45034823854161</Constant>
+					</Apply>
+					<Constant dataType="double">0.1295506681241429</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(coordinateY)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="coordinateY"/>
+						<Constant dataType="double">31.202774113255018</Constant>
+					</Apply>
+					<Constant dataType="double">0.11227531157160035</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(decorationCondition)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="decorationCondition"/>
+						<Constant dataType="double">1.4993608862377503</Constant>
+					</Apply>
+					<Constant dataType="double">0.6408518173153414</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(deed)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="deed"/>
+						<Constant dataType="double">0.3106498671049161</Constant>
+					</Apply>
+					<Constant dataType="double">0.46275968620074726</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(elevator)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="elevator"/>
+						<Constant dataType="double">0.4224643415099316</Constant>
+					</Apply>
+					<Constant dataType="double">0.49395163899162386</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(facility0)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="facility0"/>
+						<Constant dataType="double">0.2786941789924321</Constant>
+					</Apply>
+					<Constant dataType="double">0.44835670351648177</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(facility1)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="facility1"/>
+						<Constant dataType="double">0.08127903909753079</Constant>
+					</Apply>
+					<Constant dataType="double">0.27326316418594154</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(facility2)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="facility2"/>
+						<Constant dataType="double">0.18702700509262077</Constant>
+					</Apply>
+					<Constant dataType="double">0.3899332051245515</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(facility3)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="facility3"/>
+						<Constant dataType="double">0.027005092620772213</Constant>
+					</Apply>
+					<Constant dataType="double">0.16209817270196392</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(facility4)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="facility4"/>
+						<Constant dataType="double">0.1586828169699921</Constant>
+					</Apply>
+					<Constant dataType="double">0.365380049494304</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(facility5)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="facility5"/>
+						<Constant dataType="double">0.21884066792460485</Constant>
+					</Apply>
+					<Constant dataType="double">0.41346031246894505</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(level)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="level"/>
+						<Constant dataType="double">1.0978351289386654</Constant>
+					</Apply>
+					<Constant dataType="double">0.8155049784766598</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(total)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="total"/>
+						<Constant dataType="double">10.866313632397995</Constant>
+					</Apply>
+					<Constant dataType="double">7.720714560826592</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(framework)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="framework"/>
+						<Constant dataType="double">0.5930975713677035</Constant>
+					</Apply>
+					<Constant dataType="double">0.49125639151611594</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(houseTerm)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="houseTerm"/>
+						<Constant dataType="double">-0.15204820743806682</Constant>
+					</Apply>
+					<Constant dataType="double">1.2694690789922698</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(ownership)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="ownership"/>
+						<Constant dataType="double">0.4555968105179865</Constant>
+					</Apply>
+					<Constant dataType="double">0.49802445398175416</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(purpose)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="purpose"/>
+						<Constant dataType="double">2.995475480349788</Constant>
+					</Apply>
+					<Constant dataType="double">0.11606864507449073</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(apt)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="apt"/>
+						<Constant dataType="double">3.541846734433015</Constant>
+					</Apply>
+					<Constant dataType="double">2.46905674743024</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(lift)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="lift"/>
+						<Constant dataType="double">1.2155740864731066</Constant>
+					</Apply>
+					<Constant dataType="double">0.47131539049581517</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(district)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="district"/>
+						<Constant dataType="double">310102.9738673484</Constant>
+					</Apply>
+					<Constant dataType="double">30.5877188536492</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(rights)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="rights"/>
+						<Constant dataType="double">1.8524763122121453</Constant>
+					</Apply>
+					<Constant dataType="double">0.5190852093285677</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(scale)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="scale"/>
+						<Constant dataType="double">85.24755635360236</Constant>
+					</Apply>
+					<Constant dataType="double">41.343827950746636</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(structure)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="structure"/>
+						<Constant dataType="double">-0.32475094852598047</Constant>
+					</Apply>
+					<Constant dataType="double">0.9747563097564904</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(bath)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="bath"/>
+						<Constant dataType="double">1.2322519122689553</Constant>
+					</Apply>
+					<Constant dataType="double">0.49720570379332946</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(kitchen)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="kitchen"/>
+						<Constant dataType="double">1.0039158398766408</Constant>
+					</Apply>
+					<Constant dataType="double">0.08898197896355661</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(room)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="room"/>
+						<Constant dataType="double">2.1245764603242234</Constant>
+					</Apply>
+					<Constant dataType="double">0.8283273325529634</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(saloon)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="saloon"/>
+						<Constant dataType="double">1.4264410493639297</Constant>
+					</Apply>
+					<Constant dataType="double">0.6227613674822736</Constant>
+				</Apply>
+			</DerivedField>
+		</LocalTransformations>
+		<RegressionTable intercept="4970997.159494314">
+			<NumericPredictor name="standardScaler(coordinateX)" coefficient="305543.6563187868"/>
+			<NumericPredictor name="standardScaler(coordinateY)" coefficient="293009.8605029249"/>
+			<NumericPredictor name="standardScaler(decorationCondition)" coefficient="257182.24393791778"/>
+			<NumericPredictor name="standardScaler(deed)" coefficient="-215017.23955496596"/>
+			<NumericPredictor name="standardScaler(elevator)" coefficient="12291.534651170366"/>
+			<NumericPredictor name="standardScaler(facility0)" coefficient="-54243.4851342666"/>
+			<NumericPredictor name="standardScaler(facility1)" coefficient="-76836.60061578492"/>
+			<NumericPredictor name="standardScaler(facility2)" coefficient="24802.512212914608"/>
+			<NumericPredictor name="standardScaler(facility3)" coefficient="13934.597123776275"/>
+			<NumericPredictor name="standardScaler(facility4)" coefficient="42572.50182652602"/>
+			<NumericPredictor name="standardScaler(facility5)" coefficient="-8549.426578238885"/>
+			<NumericPredictor name="standardScaler(level)" coefficient="3350.5961145743495"/>
+			<NumericPredictor name="standardScaler(total)" coefficient="827375.7406723248"/>
+			<NumericPredictor name="standardScaler(framework)" coefficient="-317005.7848365611"/>
+			<NumericPredictor name="standardScaler(houseTerm)" coefficient="226728.44629883888"/>
+			<NumericPredictor name="standardScaler(ownership)" coefficient="-78339.99950406006"/>
+			<NumericPredictor name="standardScaler(purpose)" coefficient="-127368.53772964941"/>
+			<NumericPredictor name="standardScaler(apt)" coefficient="-116965.19860030296"/>
+			<NumericPredictor name="standardScaler(lift)" coefficient="93073.3913969319"/>
+			<NumericPredictor name="standardScaler(district)" coefficient="-370248.65204617224"/>
+			<NumericPredictor name="standardScaler(rights)" coefficient="250955.27764425537"/>
+			<NumericPredictor name="standardScaler(scale)" coefficient="3191764.7435987857"/>
+			<NumericPredictor name="standardScaler(structure)" coefficient="13524.892157223616"/>
+			<NumericPredictor name="standardScaler(bath)" coefficient="334093.56484788976"/>
+			<NumericPredictor name="standardScaler(kitchen)" coefficient="42360.36901064849"/>
+			<NumericPredictor name="standardScaler(room)" coefficient="-535076.7776763809"/>
+			<NumericPredictor name="standardScaler(saloon)" coefficient="-401893.907807717"/>
+		</RegressionTable>
+	</RegressionModel>
+</PMML>

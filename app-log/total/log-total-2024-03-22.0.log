@@ -1,0 +1,1491 @@
+2024-03-22 12:00:30.037  INFO 17572 --- [main] com.shou.hpsys.HpsysApplication          : Starting HpsysApplication using Java 1.8.0_402 on HYH with PID 17572 (E:\PROGRAM_SAVE\IDEA\hpsys\target\classes started by 27121 in E:\PROGRAM_SAVE\IDEA\hpsys)
+2024-03-22 12:00:30.090  INFO 17572 --- [main] com.shou.hpsys.HpsysApplication          : The following 1 profile is active: "dev"
+2024-03-22 12:00:35.448  INFO 17572 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-03-22 12:00:35.454  INFO 17572 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-22 12:00:35.648  INFO 17572 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 0 Redis repository interfaces.
+2024-03-22 12:00:38.327  INFO 17572 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 82 (http)
+2024-03-22 12:00:38.367  INFO 17572 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-22 12:00:38.367  INFO 17572 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2024-03-22 12:00:38.827  INFO 17572 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-22 12:00:38.827  INFO 17572 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8478 ms
+2024-03-22 12:00:40.884  INFO 17572 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2024-03-22 12:00:43.795  INFO 17572 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-03-22 12:00:45.620  INFO 17572 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-22 12:00:45.964  INFO 17572 --- [main] com.fhs.common.spring.SpringContextUtil  : ------SpringContextUtil setApplicationContext-------
+2024-03-22 12:00:47.196  INFO 17572 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 82 (http) with context path ''
+2024-03-22 12:00:47.568  INFO 17572 --- [main] com.shou.hpsys.HpsysApplication          : Started HpsysApplication in 20.468 seconds (JVM running for 23.9)
+2024-03-22 12:00:47.576  INFO 17572 --- [main] com.shou.hpsys.HpsysApplication          : >>> HPSYSAPPLICATION STARTING SUCCESS
+2024-03-22 12:01:44.223  INFO 17572 --- [http-nio-82-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-22 12:01:44.224  INFO 17572 --- [http-nio-82-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-22 12:01:44.227  INFO 17572 --- [http-nio-82-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-03-22 12:01:47.752  WARN 17572 --- [http-nio-82-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 63882
+2024-03-22 12:01:47.754  WARN 17572 --- [http-nio-82-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 64006
+2024-03-22 12:01:47.756  WARN 17572 --- [http-nio-82-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 64025
+2024-03-22 12:01:47.758  WARN 17572 --- [http-nio-82-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 64046
+2024-03-22 12:13:42.163  INFO 17572 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2024-03-22 12:13:42.206  INFO 17572 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2024-03-22 12:17:28.250  INFO 12144 --- [main] com.shou.hpsys.HpsysApplicationTests     : Starting HpsysApplicationTests using Java 1.8.0_402 on HYH with PID 12144 (started by 27121 in E:\PROGRAM_SAVE\IDEA\hpsys)
+2024-03-22 12:17:28.251  INFO 12144 --- [main] com.shou.hpsys.HpsysApplicationTests     : The following 1 profile is active: "dev"
+2024-03-22 12:17:29.573  INFO 12144 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-03-22 12:17:29.576  INFO 12144 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-22 12:17:29.610  INFO 12144 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2024-03-22 12:17:31.425  INFO 12144 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2024-03-22 12:17:32.781  INFO 12144 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-03-22 12:17:34.993  INFO 12144 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-22 12:17:35.400  INFO 12144 --- [main] com.fhs.common.spring.SpringContextUtil  : ------SpringContextUtil setApplicationContext-------
+2024-03-22 12:17:36.485  INFO 12144 --- [main] com.shou.hpsys.HpsysApplicationTests     : Started HpsysApplicationTests in 9.2 seconds (JVM running for 10.875)
+2024-03-22 12:17:37.130  INFO 12144 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2024-03-22 12:17:37.146  INFO 12144 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2024-03-22 12:18:43.766  INFO 8432 --- [main] com.shou.hpsys.HpsysApplicationTests     : Starting HpsysApplicationTests using Java 1.8.0_402 on HYH with PID 8432 (started by 27121 in E:\PROGRAM_SAVE\IDEA\hpsys)
+2024-03-22 12:18:43.768  INFO 8432 --- [main] com.shou.hpsys.HpsysApplicationTests     : The following 1 profile is active: "dev"
+2024-03-22 12:18:44.589  INFO 8432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-03-22 12:18:44.593  INFO 8432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-22 12:18:44.626  INFO 8432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2024-03-22 12:18:45.884  INFO 8432 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2024-03-22 12:18:46.917  INFO 8432 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-03-22 12:18:48.737  INFO 8432 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-22 12:18:49.034  INFO 8432 --- [main] com.fhs.common.spring.SpringContextUtil  : ------SpringContextUtil setApplicationContext-------
+2024-03-22 12:18:49.912  INFO 8432 --- [main] com.shou.hpsys.HpsysApplicationTests     : Started HpsysApplicationTests in 6.969 seconds (JVM running for 8.125)
+2024-03-22 12:18:50.256  INFO 8432 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2024-03-22 12:18:50.272  INFO 8432 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2024-03-22 12:19:21.278  INFO 14464 --- [main] com.shou.hpsys.HpsysApplicationTests     : Starting HpsysApplicationTests using Java 1.8.0_402 on HYH with PID 14464 (started by 27121 in E:\PROGRAM_SAVE\IDEA\hpsys)
+2024-03-22 12:19:21.279  INFO 14464 --- [main] com.shou.hpsys.HpsysApplicationTests     : The following 1 profile is active: "dev"
+2024-03-22 12:19:22.232  INFO 14464 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-03-22 12:19:22.238  INFO 14464 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-22 12:19:22.280  INFO 14464 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 0 Redis repository interfaces.
+2024-03-22 12:19:29.039  INFO 14464 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2024-03-22 12:19:34.686  INFO 14464 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-03-22 12:19:43.499  INFO 14464 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-22 12:19:46.103  INFO 14464 --- [main] com.fhs.common.spring.SpringContextUtil  : ------SpringContextUtil setApplicationContext-------
+2024-03-22 12:19:50.626  INFO 14464 --- [main] com.shou.hpsys.HpsysApplicationTests     : Started HpsysApplicationTests in 30.304 seconds (JVM running for 33.922)
+2024-03-22 12:23:35.801  INFO 14464 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2024-03-22 12:23:35.818  INFO 14464 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2024-03-22 12:23:42.269  INFO 9988 --- [main] com.shou.hpsys.HpsysApplicationTests     : Starting HpsysApplicationTests using Java 1.8.0_402 on HYH with PID 9988 (started by 27121 in E:\PROGRAM_SAVE\IDEA\hpsys)
+2024-03-22 12:23:42.271  INFO 9988 --- [main] com.shou.hpsys.HpsysApplicationTests     : The following 1 profile is active: "dev"
+2024-03-22 12:23:43.096  INFO 9988 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-03-22 12:23:43.100  INFO 9988 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-22 12:23:43.135  INFO 9988 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2024-03-22 12:23:44.438  INFO 9988 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2024-03-22 12:23:45.407  INFO 9988 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-03-22 12:23:47.404  INFO 9988 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-22 12:23:47.751  INFO 9988 --- [main] com.fhs.common.spring.SpringContextUtil  : ------SpringContextUtil setApplicationContext-------
+2024-03-22 12:23:48.889  INFO 9988 --- [main] com.shou.hpsys.HpsysApplicationTests     : Started HpsysApplicationTests in 7.469 seconds (JVM running for 8.777)
+2024-03-22 12:23:53.781  INFO 9988 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2024-03-22 12:23:53.797  INFO 9988 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2024-03-22 12:26:43.606  INFO 16160 --- [main] com.shou.hpsys.HpsysApplicationTests     : Starting HpsysApplicationTests using Java 1.8.0_402 on HYH with PID 16160 (started by 27121 in E:\PROGRAM_SAVE\IDEA\hpsys)
+2024-03-22 12:26:43.607  INFO 16160 --- [main] com.shou.hpsys.HpsysApplicationTests     : The following 1 profile is active: "dev"
+2024-03-22 12:26:44.424  INFO 16160 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-03-22 12:26:44.428  INFO 16160 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-22 12:26:44.459  INFO 16160 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2024-03-22 12:26:45.737  INFO 16160 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2024-03-22 12:26:46.720  INFO 16160 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-03-22 12:26:48.823  INFO 16160 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-22 12:26:49.178  INFO 16160 --- [main] com.fhs.common.spring.SpringContextUtil  : ------SpringContextUtil setApplicationContext-------
+2024-03-22 12:26:50.275  INFO 16160 --- [main] com.shou.hpsys.HpsysApplicationTests     : Started HpsysApplicationTests in 7.474 seconds (JVM running for 8.581)
+2024-03-22 12:26:57.704  INFO 16160 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2024-03-22 12:26:57.719  INFO 16160 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2024-03-22 12:29:51.834  INFO 12556 --- [main] com.shou.hpsys.HpsysApplicationTests     : Starting HpsysApplicationTests using Java 1.8.0_402 on HYH with PID 12556 (started by 27121 in E:\PROGRAM_SAVE\IDEA\hpsys)
+2024-03-22 12:29:51.859  INFO 12556 --- [main] com.shou.hpsys.HpsysApplicationTests     : The following 1 profile is active: "dev"
+2024-03-22 12:29:53.405  INFO 12556 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-03-22 12:29:53.408  INFO 12556 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-22 12:29:53.441  INFO 12556 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2024-03-22 12:30:01.211  INFO 12556 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2024-03-22 12:30:07.629  INFO 12556 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-03-22 12:30:16.654  INFO 12556 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-22 12:30:19.402  INFO 12556 --- [main] com.fhs.common.spring.SpringContextUtil  : ------SpringContextUtil setApplicationContext-------
+2024-03-22 12:30:24.014  INFO 12556 --- [main] com.shou.hpsys.HpsysApplicationTests     : Started HpsysApplicationTests in 33.215 seconds (JVM running for 35.215)
+2024-03-22 12:34:29.086  WARN 12556 --- [main] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 261406
+2024-03-22 12:34:29.089  WARN 12556 --- [main] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 261762
+2024-03-22 12:34:29.092  WARN 12556 --- [main] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 261995
+2024-03-22 12:34:29.096  WARN 12556 --- [main] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 262227
+2024-03-22 12:34:29.099  WARN 12556 --- [main] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 262480
+2024-03-22 12:36:45.682  INFO 12556 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2024-03-22 12:36:45.758  INFO 12556 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2024-03-22 12:38:10.399  INFO 12108 --- [main] com.shou.hpsys.HpsysApplicationTests     : Starting HpsysApplicationTests using Java 1.8.0_402 on HYH with PID 12108 (started by 27121 in E:\PROGRAM_SAVE\IDEA\hpsys)
+2024-03-22 12:38:10.401  INFO 12108 --- [main] com.shou.hpsys.HpsysApplicationTests     : The following 1 profile is active: "dev"
+2024-03-22 12:38:11.755  INFO 12108 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-03-22 12:38:11.760  INFO 12108 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-22 12:38:11.804  INFO 12108 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+2024-03-22 12:38:18.902  INFO 12108 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2024-03-22 12:38:25.600  INFO 12108 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-03-22 12:38:38.478  INFO 12108 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-22 12:38:41.141  INFO 12108 --- [main] com.fhs.common.spring.SpringContextUtil  : ------SpringContextUtil setApplicationContext-------
+2024-03-22 12:38:46.048  INFO 12108 --- [main] com.shou.hpsys.HpsysApplicationTests     : Started HpsysApplicationTests in 36.815 seconds (JVM running for 38.546)
+2024-03-22 12:42:14.229  WARN 12108 --- [main] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 228626
+2024-03-22 12:42:14.232  WARN 12108 --- [main] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 228930
+2024-03-22 12:42:14.236  WARN 12108 --- [main] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 229193
+2024-03-22 12:42:14.238  WARN 12108 --- [main] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 229448
+2024-03-22 12:42:14.240  WARN 12108 --- [main] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 229701
+2024-03-22 12:42:22.087  INFO 12108 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2024-03-22 12:42:22.097  INFO 12108 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2024-03-22 12:42:56.065  INFO 10280 --- [main] com.shou.hpsys.HpsysApplication          : Starting HpsysApplication using Java 1.8.0_402 on HYH with PID 10280 (E:\PROGRAM_SAVE\IDEA\hpsys\target\classes started by 27121 in E:\PROGRAM_SAVE\IDEA\hpsys)
+2024-03-22 12:42:56.067  INFO 10280 --- [main] com.shou.hpsys.HpsysApplication          : The following 1 profile is active: "dev"
+2024-03-22 12:42:56.784  INFO 10280 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-03-22 12:42:56.786  INFO 10280 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-22 12:42:56.813  INFO 10280 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2024-03-22 12:42:57.805  INFO 10280 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 82 (http)
+2024-03-22 12:42:57.830  INFO 10280 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-22 12:42:57.831  INFO 10280 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2024-03-22 12:42:58.093  INFO 10280 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-22 12:42:58.093  INFO 10280 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1955 ms
+2024-03-22 12:42:58.631  INFO 10280 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2024-03-22 12:42:59.090  INFO 10280 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-03-22 12:43:02.044  INFO 10280 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-22 12:43:03.542  INFO 10280 --- [main] com.fhs.common.spring.SpringContextUtil  : ------SpringContextUtil setApplicationContext-------
+2024-03-22 12:43:07.026  INFO 10280 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 82 (http) with context path ''
+2024-03-22 12:43:07.498  INFO 10280 --- [main] com.shou.hpsys.HpsysApplication          : Started HpsysApplication in 12.294 seconds (JVM running for 13.322)
+2024-03-22 12:43:07.620  INFO 10280 --- [main] com.shou.hpsys.HpsysApplication          : >>> HPSYSAPPLICATION STARTING SUCCESS
+2024-03-22 12:43:47.275  INFO 10280 --- [http-nio-82-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-22 12:43:47.276  INFO 10280 --- [http-nio-82-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-22 12:43:47.302  INFO 10280 --- [http-nio-82-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 26 ms
+2024-03-22 12:45:02.970  WARN 10280 --- [http-nio-82-exec-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 123824
+2024-03-22 12:45:02.973  WARN 10280 --- [http-nio-82-exec-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 123901
+2024-03-22 12:45:02.975  WARN 10280 --- [http-nio-82-exec-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 123919
+2024-03-22 12:45:02.977  WARN 10280 --- [http-nio-82-exec-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 123936
+2024-03-22 12:45:02.979  WARN 10280 --- [http-nio-82-exec-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 123959
+2024-03-22 12:57:17.809  INFO 10280 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2024-03-22 12:57:17.883  INFO 10280 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2024-03-22 13:04:50.967  INFO 16488 --- [main] com.shou.hpsys.HpsysApplication          : Starting HpsysApplication using Java 1.8.0_402 on HYH with PID 16488 (E:\PROGRAM_SAVE\IDEA\hpsys\target\classes started by 27121 in E:\PROGRAM_SAVE\IDEA\hpsys)
+2024-03-22 13:04:51.008  INFO 16488 --- [main] com.shou.hpsys.HpsysApplication          : The following 1 profile is active: "dev"
+2024-03-22 13:04:54.446  INFO 16488 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-03-22 13:04:54.450  INFO 16488 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-22 13:04:54.554  INFO 16488 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 0 Redis repository interfaces.
+2024-03-22 13:04:56.767  INFO 16488 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 82 (http)
+2024-03-22 13:04:56.832  INFO 16488 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-22 13:04:56.832  INFO 16488 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2024-03-22 13:04:57.780  INFO 16488 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-22 13:04:57.780  INFO 16488 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6599 ms
+2024-03-22 13:05:02.156  INFO 16488 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2024-03-22 13:05:07.550  INFO 16488 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-03-22 13:05:10.914  INFO 16488 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-22 13:05:11.253  INFO 16488 --- [main] com.fhs.common.spring.SpringContextUtil  : ------SpringContextUtil setApplicationContext-------
+2024-03-22 13:05:12.507  INFO 16488 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 82 (http) with context path ''
+2024-03-22 13:05:12.842  INFO 16488 --- [main] com.shou.hpsys.HpsysApplication          : Started HpsysApplication in 24.571 seconds (JVM running for 32.058)
+2024-03-22 13:05:12.850  INFO 16488 --- [main] com.shou.hpsys.HpsysApplication          : >>> HPSYSAPPLICATION STARTING SUCCESS
+2024-03-22 13:06:40.023  INFO 16488 --- [http-nio-82-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-22 13:06:40.023  INFO 16488 --- [http-nio-82-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-22 13:06:40.026  INFO 16488 --- [http-nio-82-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-03-22 13:06:42.906  WARN 16488 --- [http-nio-82-exec-7] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 95362
+2024-03-22 13:06:42.936  WARN 16488 --- [http-nio-82-exec-7] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 95515
+2024-03-22 13:06:42.938  WARN 16488 --- [http-nio-82-exec-7] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 95660
+2024-03-22 13:06:42.941  WARN 16488 --- [http-nio-82-exec-7] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 95743
+2024-03-22 13:06:42.944  WARN 16488 --- [http-nio-82-exec-7] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 95820
+2024-03-22 13:28:06.757  WARN 16488 --- [http-nio-82-exec-6] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 1193131
+2024-03-22 13:57:14.832  INFO 16488 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2024-03-22 13:57:14.913  INFO 16488 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2024-03-22 13:57:36.452  INFO 18400 --- [main] com.shou.hpsys.HpsysApplication          : Starting HpsysApplication using Java 1.8.0_402 on HYH with PID 18400 (E:\PROGRAM_SAVE\IDEA\hpsys\target\classes started by 27121 in E:\PROGRAM_SAVE\IDEA\hpsys)
+2024-03-22 13:57:36.454  INFO 18400 --- [main] com.shou.hpsys.HpsysApplication          : The following 1 profile is active: "dev"
+2024-03-22 13:57:37.990  INFO 18400 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-03-22 13:57:37.993  INFO 18400 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-22 13:57:38.060  INFO 18400 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 0 Redis repository interfaces.
+2024-03-22 13:57:39.184  INFO 18400 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 82 (http)
+2024-03-22 13:57:39.203  INFO 18400 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-22 13:57:39.204  INFO 18400 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2024-03-22 13:57:39.554  INFO 18400 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-22 13:57:39.554  INFO 18400 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3016 ms
+2024-03-22 13:57:53.740  INFO 18400 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2024-03-22 13:57:54.624  INFO 18400 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-03-22 13:57:58.706  INFO 18400 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-22 13:58:00.432  INFO 18400 --- [main] com.fhs.common.spring.SpringContextUtil  : ------SpringContextUtil setApplicationContext-------
+2024-03-22 13:58:03.913  INFO 18400 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 82 (http) with context path ''
+2024-03-22 13:58:04.363  INFO 18400 --- [main] com.shou.hpsys.HpsysApplication          : Started HpsysApplication in 29.05 seconds (JVM running for 32.808)
+2024-03-22 13:58:04.484  INFO 18400 --- [main] com.shou.hpsys.HpsysApplication          : >>> HPSYSAPPLICATION STARTING SUCCESS
+2024-03-22 13:58:12.904  INFO 18400 --- [http-nio-82-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-22 13:58:12.905  INFO 18400 --- [http-nio-82-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-22 13:58:12.937  INFO 18400 --- [http-nio-82-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 31 ms
+2024-03-22 13:59:27.610  WARN 18400 --- [http-nio-82-exec-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 92947
+2024-03-22 13:59:27.614  WARN 18400 --- [http-nio-82-exec-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 93026
+2024-03-22 13:59:27.618  WARN 18400 --- [http-nio-82-exec-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 93047
+2024-03-22 13:59:27.620  WARN 18400 --- [http-nio-82-exec-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 93069
+2024-03-22 13:59:27.623  WARN 18400 --- [http-nio-82-exec-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 93139
+2024-03-22 14:05:56.215  INFO 18400 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2024-03-22 14:05:56.275  INFO 18400 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2024-03-22 14:19:25.766  INFO 10612 --- [main] com.shou.hpsys.HpsysApplication          : Starting HpsysApplication using Java 1.8.0_402 on HYH with PID 10612 (E:\PROGRAM_SAVE\IDEA\hpsys\target\classes started by 27121 in E:\PROGRAM_SAVE\IDEA\hpsys)
+2024-03-22 14:19:25.802  INFO 10612 --- [main] com.shou.hpsys.HpsysApplication          : The following 1 profile is active: "dev"
+2024-03-22 14:19:29.154  INFO 10612 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-03-22 14:19:29.157  INFO 10612 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-22 14:19:29.248  INFO 10612 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 0 Redis repository interfaces.
+2024-03-22 14:19:31.064  INFO 10612 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 82 (http)
+2024-03-22 14:19:31.080  INFO 10612 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-22 14:19:31.081  INFO 10612 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2024-03-22 14:19:31.329  INFO 10612 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-22 14:19:31.330  INFO 10612 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5383 ms
+2024-03-22 14:19:32.639  INFO 10612 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2024-03-22 14:19:33.782  INFO 10612 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-03-22 14:19:35.176  INFO 10612 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-22 14:19:35.348  INFO 10612 --- [main] com.fhs.common.spring.SpringContextUtil  : ------SpringContextUtil setApplicationContext-------
+2024-03-22 14:19:36.204  INFO 10612 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 82 (http) with context path ''
+2024-03-22 14:19:36.551  INFO 10612 --- [main] com.shou.hpsys.HpsysApplication          : Started HpsysApplication in 12.727 seconds (JVM running for 15.351)
+2024-03-22 14:19:36.558  INFO 10612 --- [main] com.shou.hpsys.HpsysApplication          : >>> HPSYSAPPLICATION STARTING SUCCESS
+2024-03-22 14:23:28.787  INFO 10612 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2024-03-22 14:23:28.855  INFO 10612 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2024-03-22 14:27:32.124  INFO 10176 --- [main] com.shou.hpsys.HpsysApplication          : Starting HpsysApplication using Java 1.8.0_402 on HYH with PID 10176 (E:\PROGRAM_SAVE\IDEA\hpsys\target\classes started by 27121 in E:\PROGRAM_SAVE\IDEA\hpsys)
+2024-03-22 14:27:32.167  INFO 10176 --- [main] com.shou.hpsys.HpsysApplication          : The following 1 profile is active: "dev"
+2024-03-22 14:27:35.909  INFO 10176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-03-22 14:27:35.912  INFO 10176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-22 14:27:36.117  INFO 10176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 0 Redis repository interfaces.
+2024-03-22 14:27:38.352  INFO 10176 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 82 (http)
+2024-03-22 14:27:38.457  INFO 10176 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-22 14:27:38.457  INFO 10176 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2024-03-22 14:27:39.201  INFO 10176 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-22 14:27:39.202  INFO 10176 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6854 ms
+2024-03-22 14:27:40.750  INFO 10176 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2024-03-22 14:27:42.995  INFO 10176 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-03-22 14:27:44.958  INFO 10176 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-22 14:27:45.241  INFO 10176 --- [main] com.fhs.common.spring.SpringContextUtil  : ------SpringContextUtil setApplicationContext-------
+2024-03-22 14:27:46.241  INFO 10176 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 82 (http) with context path ''
+2024-03-22 14:27:46.580  INFO 10176 --- [main] com.shou.hpsys.HpsysApplication          : Started HpsysApplication in 18.168 seconds (JVM running for 28.723)
+2024-03-22 14:27:46.588  INFO 10176 --- [main] com.shou.hpsys.HpsysApplication          : >>> HPSYSAPPLICATION STARTING SUCCESS
+2024-03-22 14:27:52.601  INFO 10176 --- [http-nio-82-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-22 14:27:52.602  INFO 10176 --- [http-nio-82-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-22 14:27:52.603  INFO 10176 --- [http-nio-82-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-03-22 14:27:52.688  INFO 10176 --- [http-nio-82-exec-2] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/doLogin  提交token=null
+2024-03-22 14:27:57.929  INFO 10176 --- [http-nio-82-exec-7] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/getLoginUser  提交token="f3e625aa8ff54bcea0f9f689ff79b971"
+2024-03-22 14:27:57.982 ERROR 10176 --- [http-nio-82-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is cn.dev33.satoken.exception.NotLoginException: Token无效："f3e625aa8ff54bcea0f9f689ff79b971"] with root cause
+
+cn.dev33.satoken.exception.NotLoginException: Token无效："f3e625aa8ff54bcea0f9f689ff79b971"
+	at cn.dev33.satoken.exception.NotLoginException.newInstance(NotLoginException.java:137)
+	at cn.dev33.satoken.stp.StpLogic.getLoginId(StpLogic.java:646)
+	at cn.dev33.satoken.stp.StpLogic.checkLogin(StpLogic.java:626)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:929)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:940)
+	at cn.dev33.satoken.stp.StpUtil.getTokenSession(StpUtil.java:421)
+	at com.shou.hpsys.web.login.util.StpLoginUserUtil.getLoginUser(StpLoginUserUtil.java:22)
+	at com.shou.hpsys.web.login.service.impl.LoginServiceImpl.getLoginUser(LoginServiceImpl.java:76)
+	at com.shou.hpsys.web.login.controller.LoginController.getLoginUser(LoginController.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at cn.dev33.satoken.filter.SaServletFilter.doFilter(SaServletFilter.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+
+2024-03-22 14:35:46.883  INFO 10176 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2024-03-22 14:35:47.002  INFO 10176 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2024-03-22 14:35:58.505  INFO 9388 --- [main] com.shou.hpsys.HpsysApplication          : Starting HpsysApplication using Java 1.8.0_402 on HYH with PID 9388 (E:\PROGRAM_SAVE\IDEA\hpsys\target\classes started by 27121 in E:\PROGRAM_SAVE\IDEA\hpsys)
+2024-03-22 14:35:58.534  INFO 9388 --- [main] com.shou.hpsys.HpsysApplication          : The following 1 profile is active: "dev"
+2024-03-22 14:36:00.077  INFO 9388 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-03-22 14:36:00.079  INFO 9388 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-22 14:36:00.131  INFO 9388 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 0 Redis repository interfaces.
+2024-03-22 14:36:01.575  INFO 9388 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 82 (http)
+2024-03-22 14:36:01.620  INFO 9388 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-22 14:36:01.620  INFO 9388 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2024-03-22 14:36:02.166  INFO 9388 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-22 14:36:02.166  INFO 9388 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3489 ms
+2024-03-22 14:36:02.819  INFO 9388 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2024-03-22 14:36:04.168  INFO 9388 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-03-22 14:36:05.526  INFO 9388 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-22 14:36:05.656  INFO 9388 --- [main] com.fhs.common.spring.SpringContextUtil  : ------SpringContextUtil setApplicationContext-------
+2024-03-22 14:36:06.470  INFO 9388 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 82 (http) with context path ''
+2024-03-22 14:36:06.841  INFO 9388 --- [main] com.shou.hpsys.HpsysApplication          : Started HpsysApplication in 9.884 seconds (JVM running for 12.315)
+2024-03-22 14:36:06.852  INFO 9388 --- [main] com.shou.hpsys.HpsysApplication          : >>> HPSYSAPPLICATION STARTING SUCCESS
+2024-03-22 14:37:31.062  INFO 9388 --- [http-nio-82-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-22 14:37:31.062  INFO 9388 --- [http-nio-82-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-22 14:37:31.063  INFO 9388 --- [http-nio-82-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-03-22 14:37:31.128  INFO 9388 --- [http-nio-82-exec-1] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/doLogin  提交token=null
+2024-03-22 14:37:34.126  WARN 9388 --- [http-nio-82-exec-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 89922
+2024-03-22 14:37:34.129  WARN 9388 --- [http-nio-82-exec-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 89991
+2024-03-22 14:37:34.131  WARN 9388 --- [http-nio-82-exec-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 90011
+2024-03-22 14:37:34.134  WARN 9388 --- [http-nio-82-exec-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 90027
+2024-03-22 14:37:34.137  WARN 9388 --- [http-nio-82-exec-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 90081
+2024-03-22 14:37:37.882  INFO 9388 --- [http-nio-82-exec-6] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/getLoginUser  提交token="QQPB8XMTxUf694QtWVOFrIMrhN9c7oP5"
+2024-03-22 14:37:38.014 ERROR 9388 --- [http-nio-82-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is cn.dev33.satoken.exception.NotLoginException: Token无效："QQPB8XMTxUf694QtWVOFrIMrhN9c7oP5"] with root cause
+
+cn.dev33.satoken.exception.NotLoginException: Token无效："QQPB8XMTxUf694QtWVOFrIMrhN9c7oP5"
+	at cn.dev33.satoken.exception.NotLoginException.newInstance(NotLoginException.java:137)
+	at cn.dev33.satoken.stp.StpLogic.getLoginId(StpLogic.java:646)
+	at cn.dev33.satoken.stp.StpLogic.checkLogin(StpLogic.java:626)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:929)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:940)
+	at cn.dev33.satoken.stp.StpUtil.getTokenSession(StpUtil.java:421)
+	at com.shou.hpsys.web.login.util.StpLoginUserUtil.getLoginUser(StpLoginUserUtil.java:22)
+	at com.shou.hpsys.web.login.service.impl.LoginServiceImpl.getLoginUser(LoginServiceImpl.java:76)
+	at com.shou.hpsys.web.login.controller.LoginController.getLoginUser(LoginController.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at cn.dev33.satoken.filter.SaServletFilter.doFilter(SaServletFilter.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+
+2024-03-22 14:42:44.660  INFO 9388 --- [http-nio-82-exec-9] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/getLoginUser  提交token=null
+2024-03-22 14:42:44.662 ERROR 9388 --- [http-nio-82-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+
+java.lang.NullPointerException: null
+	at com.shou.hpsys.web.login.util.StpLoginUserUtil.getLoginUser(StpLoginUserUtil.java:22)
+	at com.shou.hpsys.web.login.service.impl.LoginServiceImpl.getLoginUser(LoginServiceImpl.java:76)
+	at com.shou.hpsys.web.login.controller.LoginController.getLoginUser(LoginController.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at cn.dev33.satoken.filter.SaServletFilter.doFilter(SaServletFilter.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+
+2024-03-22 14:42:44.984  INFO 9388 --- [http-nio-82-exec-5] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/favicon.ico  提交token=null
+2024-03-22 14:47:26.460  INFO 9388 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2024-03-22 14:47:26.501  INFO 9388 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2024-03-22 14:47:35.626  INFO 8816 --- [main] com.shou.hpsys.HpsysApplication          : Starting HpsysApplication using Java 1.8.0_402 on HYH with PID 8816 (E:\PROGRAM_SAVE\IDEA\hpsys\target\classes started by 27121 in E:\PROGRAM_SAVE\IDEA\hpsys)
+2024-03-22 14:47:35.655  INFO 8816 --- [main] com.shou.hpsys.HpsysApplication          : The following 1 profile is active: "dev"
+2024-03-22 14:47:37.120  INFO 8816 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-03-22 14:47:37.122  INFO 8816 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-22 14:47:37.147  INFO 8816 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2024-03-22 14:47:38.298  INFO 8816 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 82 (http)
+2024-03-22 14:47:38.341  INFO 8816 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-22 14:47:38.342  INFO 8816 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2024-03-22 14:47:38.854  INFO 8816 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-22 14:47:38.854  INFO 8816 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3068 ms
+2024-03-22 14:47:39.526  INFO 8816 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2024-03-22 14:47:40.890  INFO 8816 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-03-22 14:47:42.189  INFO 8816 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-22 14:47:42.325  INFO 8816 --- [main] com.fhs.common.spring.SpringContextUtil  : ------SpringContextUtil setApplicationContext-------
+2024-03-22 14:47:43.035  INFO 8816 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 82 (http) with context path ''
+2024-03-22 14:47:43.412  INFO 8816 --- [main] com.shou.hpsys.HpsysApplication          : Started HpsysApplication in 9.387 seconds (JVM running for 11.457)
+2024-03-22 14:47:43.418  INFO 8816 --- [main] com.shou.hpsys.HpsysApplication          : >>> HPSYSAPPLICATION STARTING SUCCESS
+2024-03-22 14:48:18.523  INFO 8816 --- [http-nio-82-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-22 14:48:18.524  INFO 8816 --- [http-nio-82-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-22 14:48:18.525  INFO 8816 --- [http-nio-82-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-03-22 14:48:18.535  INFO 8816 --- [http-nio-82-exec-1] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/doLogin  提交token=null
+2024-03-22 14:48:22.107  INFO 8816 --- [http-nio-82-exec-8] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/getLoginUser  提交token="00MxM8PjkbO4JmtwLWQ8Fj7JHXC419Di"
+2024-03-22 14:48:22.116 ERROR 8816 --- [http-nio-82-exec-8] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is cn.dev33.satoken.exception.NotLoginException: Token无效："00MxM8PjkbO4JmtwLWQ8Fj7JHXC419Di"] with root cause
+
+cn.dev33.satoken.exception.NotLoginException: Token无效："00MxM8PjkbO4JmtwLWQ8Fj7JHXC419Di"
+	at cn.dev33.satoken.exception.NotLoginException.newInstance(NotLoginException.java:137)
+	at cn.dev33.satoken.stp.StpLogic.getLoginId(StpLogic.java:646)
+	at cn.dev33.satoken.stp.StpLogic.checkLogin(StpLogic.java:626)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:929)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:940)
+	at cn.dev33.satoken.stp.StpUtil.getTokenSession(StpUtil.java:421)
+	at com.shou.hpsys.web.login.util.StpLoginUserUtil.getLoginUser(StpLoginUserUtil.java:22)
+	at com.shou.hpsys.web.login.service.impl.LoginServiceImpl.getLoginUser(LoginServiceImpl.java:76)
+	at com.shou.hpsys.web.login.controller.LoginController.getLoginUser(LoginController.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at cn.dev33.satoken.filter.SaServletFilter.doFilter(SaServletFilter.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+
+2024-03-22 14:56:32.762  INFO 8816 --- [http-nio-82-exec-2] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/doLogin  提交token=null
+2024-03-22 14:56:33.178  WARN 8816 --- [http-nio-82-exec-2] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 491120
+2024-03-22 14:56:33.180  WARN 8816 --- [http-nio-82-exec-2] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 532325
+2024-03-22 14:56:33.182  WARN 8816 --- [http-nio-82-exec-2] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 532345
+2024-03-22 14:56:33.185  WARN 8816 --- [http-nio-82-exec-2] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 532365
+2024-03-22 14:56:33.187  WARN 8816 --- [http-nio-82-exec-2] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 532418
+2024-03-22 14:56:33.240  INFO 8816 --- [http-nio-82-exec-6] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/getLoginUser  提交token="IOmvUNiy5GsN5EnPwbi0H7n5U72EN9lL"
+2024-03-22 14:56:33.557 ERROR 8816 --- [http-nio-82-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is cn.dev33.satoken.exception.NotLoginException: Token无效："IOmvUNiy5GsN5EnPwbi0H7n5U72EN9lL"] with root cause
+
+cn.dev33.satoken.exception.NotLoginException: Token无效："IOmvUNiy5GsN5EnPwbi0H7n5U72EN9lL"
+	at cn.dev33.satoken.exception.NotLoginException.newInstance(NotLoginException.java:137)
+	at cn.dev33.satoken.stp.StpLogic.getLoginId(StpLogic.java:646)
+	at cn.dev33.satoken.stp.StpLogic.checkLogin(StpLogic.java:626)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:929)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:940)
+	at cn.dev33.satoken.stp.StpUtil.getTokenSession(StpUtil.java:421)
+	at com.shou.hpsys.web.login.util.StpLoginUserUtil.getLoginUser(StpLoginUserUtil.java:22)
+	at com.shou.hpsys.web.login.service.impl.LoginServiceImpl.getLoginUser(LoginServiceImpl.java:76)
+	at com.shou.hpsys.web.login.controller.LoginController.getLoginUser(LoginController.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at cn.dev33.satoken.filter.SaServletFilter.doFilter(SaServletFilter.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+
+2024-03-22 15:05:43.115  INFO 8816 --- [http-nio-82-exec-7] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/doLogout  提交token=null
+2024-03-22 15:09:26.377  INFO 8816 --- [http-nio-82-exec-9] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/doLogin  提交token=null
+2024-03-22 15:09:26.749  WARN 8816 --- [http-nio-82-exec-9] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 773530
+2024-03-22 15:09:26.852  INFO 8816 --- [http-nio-82-exec-1] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/getLoginUser  提交token="uhljYcEmSYWQb6CFdaunFZx1CNaqhCuZ"
+2024-03-22 15:09:26.854 ERROR 8816 --- [http-nio-82-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is cn.dev33.satoken.exception.NotLoginException: Token无效："uhljYcEmSYWQb6CFdaunFZx1CNaqhCuZ"] with root cause
+
+cn.dev33.satoken.exception.NotLoginException: Token无效："uhljYcEmSYWQb6CFdaunFZx1CNaqhCuZ"
+	at cn.dev33.satoken.exception.NotLoginException.newInstance(NotLoginException.java:137)
+	at cn.dev33.satoken.stp.StpLogic.getLoginId(StpLogic.java:646)
+	at cn.dev33.satoken.stp.StpLogic.checkLogin(StpLogic.java:626)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:929)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:940)
+	at cn.dev33.satoken.stp.StpUtil.getTokenSession(StpUtil.java:421)
+	at com.shou.hpsys.web.login.util.StpLoginUserUtil.getLoginUser(StpLoginUserUtil.java:22)
+	at com.shou.hpsys.web.login.service.impl.LoginServiceImpl.getLoginUser(LoginServiceImpl.java:76)
+	at com.shou.hpsys.web.login.controller.LoginController.getLoginUser(LoginController.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at cn.dev33.satoken.filter.SaServletFilter.doFilter(SaServletFilter.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+
+2024-03-22 15:10:12.743  INFO 8816 --- [http-nio-82-exec-4] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/doLogin  提交token=null
+2024-03-22 15:10:13.185  INFO 8816 --- [http-nio-82-exec-2] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/getLoginUser  提交token="VCaUruWXDzKezndAaSa5xBlHpergkdeE"
+2024-03-22 15:10:13.187 ERROR 8816 --- [http-nio-82-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is cn.dev33.satoken.exception.NotLoginException: Token无效："VCaUruWXDzKezndAaSa5xBlHpergkdeE"] with root cause
+
+cn.dev33.satoken.exception.NotLoginException: Token无效："VCaUruWXDzKezndAaSa5xBlHpergkdeE"
+	at cn.dev33.satoken.exception.NotLoginException.newInstance(NotLoginException.java:137)
+	at cn.dev33.satoken.stp.StpLogic.getLoginId(StpLogic.java:646)
+	at cn.dev33.satoken.stp.StpLogic.checkLogin(StpLogic.java:626)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:929)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:940)
+	at cn.dev33.satoken.stp.StpUtil.getTokenSession(StpUtil.java:421)
+	at com.shou.hpsys.web.login.util.StpLoginUserUtil.getLoginUser(StpLoginUserUtil.java:22)
+	at com.shou.hpsys.web.login.service.impl.LoginServiceImpl.getLoginUser(LoginServiceImpl.java:76)
+	at com.shou.hpsys.web.login.controller.LoginController.getLoginUser(LoginController.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at cn.dev33.satoken.filter.SaServletFilter.doFilter(SaServletFilter.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+
+2024-03-22 15:10:21.268  INFO 8816 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2024-03-22 15:10:21.281  INFO 8816 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2024-03-22 15:10:35.216  INFO 14112 --- [main] com.shou.hpsys.HpsysApplication          : Starting HpsysApplication using Java 1.8.0_402 on HYH with PID 14112 (E:\PROGRAM_SAVE\IDEA\hpsys\target\classes started by 27121 in E:\PROGRAM_SAVE\IDEA\hpsys)
+2024-03-22 15:10:35.220  INFO 14112 --- [main] com.shou.hpsys.HpsysApplication          : The following 1 profile is active: "dev"
+2024-03-22 15:10:36.225  INFO 14112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-03-22 15:10:36.227  INFO 14112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-22 15:10:36.250  INFO 14112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2024-03-22 15:10:36.937  INFO 14112 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 82 (http)
+2024-03-22 15:10:36.945  INFO 14112 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-22 15:10:36.945  INFO 14112 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2024-03-22 15:10:37.162  INFO 14112 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-22 15:10:37.162  INFO 14112 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1859 ms
+2024-03-22 15:10:37.621  INFO 14112 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2024-03-22 15:10:38.040  INFO 14112 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-03-22 15:10:38.951  INFO 14112 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-22 15:10:39.042  INFO 14112 --- [main] com.fhs.common.spring.SpringContextUtil  : ------SpringContextUtil setApplicationContext-------
+2024-03-22 15:10:39.601  INFO 14112 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 82 (http) with context path ''
+2024-03-22 15:10:39.963  INFO 14112 --- [main] com.shou.hpsys.HpsysApplication          : Started HpsysApplication in 5.725 seconds (JVM running for 7.253)
+2024-03-22 15:10:39.969  INFO 14112 --- [main] com.shou.hpsys.HpsysApplication          : >>> HPSYSAPPLICATION STARTING SUCCESS
+2024-03-22 15:11:08.884  INFO 14112 --- [http-nio-82-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-22 15:11:08.885  INFO 14112 --- [http-nio-82-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-22 15:11:08.888  INFO 14112 --- [http-nio-82-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-03-22 15:11:08.957  INFO 14112 --- [http-nio-82-exec-1] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/doLogin  提交token=null
+2024-03-22 15:11:15.906  INFO 14112 --- [http-nio-82-exec-4] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/getLoginUser  提交token="zCg6RwjGYLWOiHqpa6bZzJsjT8RgbcMJ"
+2024-03-22 15:11:16.021 ERROR 14112 --- [http-nio-82-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is cn.dev33.satoken.exception.NotLoginException: Token无效："zCg6RwjGYLWOiHqpa6bZzJsjT8RgbcMJ"] with root cause
+
+cn.dev33.satoken.exception.NotLoginException: Token无效："zCg6RwjGYLWOiHqpa6bZzJsjT8RgbcMJ"
+	at cn.dev33.satoken.exception.NotLoginException.newInstance(NotLoginException.java:137)
+	at cn.dev33.satoken.stp.StpLogic.getLoginId(StpLogic.java:646)
+	at cn.dev33.satoken.stp.StpLogic.checkLogin(StpLogic.java:626)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:929)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:940)
+	at cn.dev33.satoken.stp.StpUtil.getTokenSession(StpUtil.java:421)
+	at com.shou.hpsys.web.login.util.StpLoginUserUtil.getLoginUser(StpLoginUserUtil.java:22)
+	at com.shou.hpsys.web.login.service.impl.LoginServiceImpl.getLoginUser(LoginServiceImpl.java:76)
+	at com.shou.hpsys.web.login.controller.LoginController.getLoginUser(LoginController.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at cn.dev33.satoken.filter.SaServletFilter.doFilter(SaServletFilter.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+
+2024-03-22 15:11:48.546  INFO 14112 --- [http-nio-82-exec-2] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/doLogin  提交token=null
+2024-03-22 15:11:49.016  INFO 14112 --- [http-nio-82-exec-9] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/getLoginUser  提交token="omw8K6q6I9ichgRQ3dNnKkakkmc4jpni"
+2024-03-22 15:11:49.018 ERROR 14112 --- [http-nio-82-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is cn.dev33.satoken.exception.NotLoginException: Token无效："omw8K6q6I9ichgRQ3dNnKkakkmc4jpni"] with root cause
+
+cn.dev33.satoken.exception.NotLoginException: Token无效："omw8K6q6I9ichgRQ3dNnKkakkmc4jpni"
+	at cn.dev33.satoken.exception.NotLoginException.newInstance(NotLoginException.java:137)
+	at cn.dev33.satoken.stp.StpLogic.getLoginId(StpLogic.java:646)
+	at cn.dev33.satoken.stp.StpLogic.checkLogin(StpLogic.java:626)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:929)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:940)
+	at cn.dev33.satoken.stp.StpUtil.getTokenSession(StpUtil.java:421)
+	at com.shou.hpsys.web.login.util.StpLoginUserUtil.getLoginUser(StpLoginUserUtil.java:22)
+	at com.shou.hpsys.web.login.service.impl.LoginServiceImpl.getLoginUser(LoginServiceImpl.java:76)
+	at com.shou.hpsys.web.login.controller.LoginController.getLoginUser(LoginController.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at cn.dev33.satoken.filter.SaServletFilter.doFilter(SaServletFilter.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+
+2024-03-22 15:12:09.081  INFO 14112 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2024-03-22 15:12:09.099  INFO 14112 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2024-03-22 15:12:24.239  INFO 18784 --- [main] com.shou.hpsys.HpsysApplication          : Starting HpsysApplication using Java 1.8.0_402 on HYH with PID 18784 (E:\PROGRAM_SAVE\IDEA\hpsys\target\classes started by 27121 in E:\PROGRAM_SAVE\IDEA\hpsys)
+2024-03-22 15:12:24.243  INFO 18784 --- [main] com.shou.hpsys.HpsysApplication          : The following 1 profile is active: "dev"
+2024-03-22 15:12:25.366  INFO 18784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-03-22 15:12:25.368  INFO 18784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-22 15:12:25.395  INFO 18784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2024-03-22 15:12:26.168  INFO 18784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 82 (http)
+2024-03-22 15:12:26.177  INFO 18784 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-22 15:12:26.177  INFO 18784 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2024-03-22 15:12:26.352  INFO 18784 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-22 15:12:26.353  INFO 18784 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2054 ms
+2024-03-22 15:12:26.938  INFO 18784 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2024-03-22 15:12:27.618  INFO 18784 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-03-22 15:12:28.685  INFO 18784 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-22 15:12:28.788  INFO 18784 --- [main] com.fhs.common.spring.SpringContextUtil  : ------SpringContextUtil setApplicationContext-------
+2024-03-22 15:12:29.363  INFO 18784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 82 (http) with context path ''
+2024-03-22 15:12:29.735  INFO 18784 --- [main] com.shou.hpsys.HpsysApplication          : Started HpsysApplication in 7.391 seconds (JVM running for 9.461)
+2024-03-22 15:12:29.745  INFO 18784 --- [main] com.shou.hpsys.HpsysApplication          : >>> HPSYSAPPLICATION STARTING SUCCESS
+2024-03-22 15:12:57.142  INFO 18784 --- [http-nio-82-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-22 15:12:57.142  INFO 18784 --- [http-nio-82-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-22 15:12:57.144  INFO 18784 --- [http-nio-82-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-03-22 15:12:57.153  INFO 18784 --- [http-nio-82-exec-1] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/doLogin  提交token=null
+2024-03-22 15:13:00.900  INFO 18784 --- [http-nio-82-exec-9] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/getLoginUser  提交token="i3idONkFmQ8TH6YJXjPDm05kjJvzWpwu"
+2024-03-22 15:13:00.908 ERROR 18784 --- [http-nio-82-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is cn.dev33.satoken.exception.NotLoginException: Token无效："i3idONkFmQ8TH6YJXjPDm05kjJvzWpwu"] with root cause
+
+cn.dev33.satoken.exception.NotLoginException: Token无效："i3idONkFmQ8TH6YJXjPDm05kjJvzWpwu"
+	at cn.dev33.satoken.exception.NotLoginException.newInstance(NotLoginException.java:137)
+	at cn.dev33.satoken.stp.StpLogic.getLoginId(StpLogic.java:646)
+	at cn.dev33.satoken.stp.StpLogic.checkLogin(StpLogic.java:626)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:929)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:940)
+	at cn.dev33.satoken.stp.StpUtil.getTokenSession(StpUtil.java:421)
+	at com.shou.hpsys.web.login.util.StpLoginUserUtil.getLoginUser(StpLoginUserUtil.java:22)
+	at com.shou.hpsys.web.login.service.impl.LoginServiceImpl.getLoginUser(LoginServiceImpl.java:76)
+	at com.shou.hpsys.web.login.controller.LoginController.getLoginUser(LoginController.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at cn.dev33.satoken.filter.SaServletFilter.doFilter(SaServletFilter.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+
+2024-03-22 15:16:45.882  INFO 18784 --- [http-nio-82-exec-3] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/doLogin  提交token=null
+2024-03-22 15:16:46.389  WARN 18784 --- [http-nio-82-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 225462
+2024-03-22 15:16:46.395  WARN 18784 --- [http-nio-82-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 258830
+2024-03-22 15:16:46.401  WARN 18784 --- [http-nio-82-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 258852
+2024-03-22 15:16:46.406  WARN 18784 --- [http-nio-82-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 258876
+2024-03-22 15:16:46.410  WARN 18784 --- [http-nio-82-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 258904
+2024-03-22 15:16:46.475  INFO 18784 --- [http-nio-82-exec-2] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/getLoginUser  提交token="E449nAeGSgInkYcakGGg4IBVYCOocVDC"
+2024-03-22 15:16:46.476 ERROR 18784 --- [http-nio-82-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is cn.dev33.satoken.exception.NotLoginException: Token无效："E449nAeGSgInkYcakGGg4IBVYCOocVDC"] with root cause
+
+cn.dev33.satoken.exception.NotLoginException: Token无效："E449nAeGSgInkYcakGGg4IBVYCOocVDC"
+	at cn.dev33.satoken.exception.NotLoginException.newInstance(NotLoginException.java:137)
+	at cn.dev33.satoken.stp.StpLogic.getLoginId(StpLogic.java:646)
+	at cn.dev33.satoken.stp.StpLogic.checkLogin(StpLogic.java:626)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:929)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:940)
+	at cn.dev33.satoken.stp.StpUtil.getTokenSession(StpUtil.java:421)
+	at com.shou.hpsys.web.login.util.StpLoginUserUtil.getLoginUser(StpLoginUserUtil.java:22)
+	at com.shou.hpsys.web.login.service.impl.LoginServiceImpl.getLoginUser(LoginServiceImpl.java:76)
+	at com.shou.hpsys.web.login.controller.LoginController.getLoginUser(LoginController.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at cn.dev33.satoken.filter.SaServletFilter.doFilter(SaServletFilter.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+
+2024-03-22 15:27:52.186  INFO 18784 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2024-03-22 15:27:52.250  INFO 18784 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2024-03-22 15:28:06.642  INFO 21972 --- [main] com.shou.hpsys.HpsysApplication          : Starting HpsysApplication using Java 1.8.0_402 on HYH with PID 21972 (E:\PROGRAM_SAVE\IDEA\hpsys\target\classes started by 27121 in E:\PROGRAM_SAVE\IDEA\hpsys)
+2024-03-22 15:28:06.644  INFO 21972 --- [main] com.shou.hpsys.HpsysApplication          : The following 1 profile is active: "dev"
+2024-03-22 15:28:07.663  INFO 21972 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-03-22 15:28:07.665  INFO 21972 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-22 15:28:07.690  INFO 21972 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2024-03-22 15:28:08.405  INFO 21972 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 82 (http)
+2024-03-22 15:28:08.413  INFO 21972 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-22 15:28:08.414  INFO 21972 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2024-03-22 15:28:08.654  INFO 21972 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-22 15:28:08.654  INFO 21972 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1980 ms
+2024-03-22 15:28:09.119  INFO 21972 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2024-03-22 15:28:09.828  INFO 21972 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-03-22 15:28:10.797  INFO 21972 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-22 15:28:10.927  INFO 21972 --- [main] com.fhs.common.spring.SpringContextUtil  : ------SpringContextUtil setApplicationContext-------
+2024-03-22 15:28:11.550  INFO 21972 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 82 (http) with context path ''
+2024-03-22 15:28:11.909  INFO 21972 --- [main] com.shou.hpsys.HpsysApplication          : Started HpsysApplication in 6.218 seconds (JVM running for 7.544)
+2024-03-22 15:28:11.917  INFO 21972 --- [main] com.shou.hpsys.HpsysApplication          : >>> HPSYSAPPLICATION STARTING SUCCESS
+2024-03-22 15:31:06.449  INFO 21972 --- [http-nio-82-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-22 15:31:06.449  INFO 21972 --- [http-nio-82-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-22 15:31:06.451  INFO 21972 --- [http-nio-82-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-03-22 15:31:06.469  INFO 21972 --- [http-nio-82-exec-2] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/doLogin  提交token=null
+2024-03-22 15:31:06.646  INFO 21972 --- [http-nio-82-exec-4] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/getLoginUser  提交token=undefined
+2024-03-22 15:31:43.418  INFO 21972 --- [http-nio-82-exec-6] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/doLogin  提交token=null
+2024-03-22 15:31:43.587  INFO 21972 --- [http-nio-82-exec-3] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/getLoginUser  提交token=undefined
+2024-03-22 15:33:10.106  INFO 21972 --- [http-nio-82-exec-10] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/doLogin  提交token=null
+2024-03-22 15:33:10.285  INFO 21972 --- [http-nio-82-exec-2] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/getLoginUser  提交token=undefined
+2024-03-22 15:33:14.487  INFO 21972 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2024-03-22 15:33:14.498  INFO 21972 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2024-03-22 15:33:22.196  INFO 20072 --- [main] com.shou.hpsys.HpsysApplication          : Starting HpsysApplication using Java 1.8.0_402 on HYH with PID 20072 (E:\PROGRAM_SAVE\IDEA\hpsys\target\classes started by 27121 in E:\PROGRAM_SAVE\IDEA\hpsys)
+2024-03-22 15:33:22.198  INFO 20072 --- [main] com.shou.hpsys.HpsysApplication          : The following 1 profile is active: "dev"
+2024-03-22 15:33:22.895  INFO 20072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-03-22 15:33:22.897  INFO 20072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-22 15:33:22.925  INFO 20072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2024-03-22 15:33:23.621  INFO 20072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 82 (http)
+2024-03-22 15:33:23.648  INFO 20072 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-22 15:33:23.648  INFO 20072 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2024-03-22 15:33:23.965  INFO 20072 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-22 15:33:23.967  INFO 20072 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1735 ms
+2024-03-22 15:33:24.503  INFO 20072 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2024-03-22 15:33:25.052  INFO 20072 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-03-22 15:33:27.804  INFO 20072 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-22 15:33:28.084  INFO 20072 --- [main] com.fhs.common.spring.SpringContextUtil  : ------SpringContextUtil setApplicationContext-------
+2024-03-22 15:33:28.854  INFO 20072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 82 (http) with context path ''
+2024-03-22 15:33:29.219  INFO 20072 --- [main] com.shou.hpsys.HpsysApplication          : Started HpsysApplication in 7.887 seconds (JVM running for 9.026)
+2024-03-22 15:33:29.226  INFO 20072 --- [main] com.shou.hpsys.HpsysApplication          : >>> HPSYSAPPLICATION STARTING SUCCESS
+2024-03-22 15:33:34.799  INFO 20072 --- [http-nio-82-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-22 15:33:34.800  INFO 20072 --- [http-nio-82-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-22 15:33:34.801  INFO 20072 --- [http-nio-82-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-03-22 15:33:34.811  INFO 20072 --- [http-nio-82-exec-1] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/doLogin  提交token=null
+2024-03-22 15:33:38.240  INFO 20072 --- [http-nio-82-exec-3] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/getLoginUser  提交token="6Nf2i4tlz0qY4NL77g3rBP2qtZMkxX37"
+2024-03-22 15:33:38.249 ERROR 20072 --- [http-nio-82-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is cn.dev33.satoken.exception.NotLoginException: Token无效："6Nf2i4tlz0qY4NL77g3rBP2qtZMkxX37"] with root cause
+
+cn.dev33.satoken.exception.NotLoginException: Token无效："6Nf2i4tlz0qY4NL77g3rBP2qtZMkxX37"
+	at cn.dev33.satoken.exception.NotLoginException.newInstance(NotLoginException.java:137)
+	at cn.dev33.satoken.stp.StpLogic.getLoginId(StpLogic.java:646)
+	at cn.dev33.satoken.stp.StpLogic.checkLogin(StpLogic.java:626)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:929)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:940)
+	at cn.dev33.satoken.stp.StpUtil.getTokenSession(StpUtil.java:421)
+	at com.shou.hpsys.web.login.util.StpLoginUserUtil.getLoginUser(StpLoginUserUtil.java:23)
+	at com.shou.hpsys.web.login.service.impl.LoginServiceImpl.getLoginUser(LoginServiceImpl.java:76)
+	at com.shou.hpsys.web.login.controller.LoginController.getLoginUser(LoginController.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at cn.dev33.satoken.filter.SaServletFilter.doFilter(SaServletFilter.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+
+2024-03-22 15:34:55.940  INFO 20072 --- [http-nio-82-exec-6] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/doLogin  提交token=null
+2024-03-22 15:34:56.323  WARN 20072 --- [http-nio-82-exec-6] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 78104
+2024-03-22 15:34:56.324  WARN 20072 --- [http-nio-82-exec-6] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 91297
+2024-03-22 15:34:56.325  WARN 20072 --- [http-nio-82-exec-6] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 91319
+2024-03-22 15:34:56.327  WARN 20072 --- [http-nio-82-exec-6] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 91339
+2024-03-22 15:34:56.328  WARN 20072 --- [http-nio-82-exec-6] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 91370
+2024-03-22 15:34:56.388  INFO 20072 --- [http-nio-82-exec-8] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/getLoginUser  提交token=Bearer "A0VV62sZge9LhD0wxkHpyXAJALfXqNT9"
+2024-03-22 15:34:56.389 ERROR 20072 --- [http-nio-82-exec-8] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is cn.dev33.satoken.exception.NotLoginException: Token无效：Bearer "A0VV62sZge9LhD0wxkHpyXAJALfXqNT9"] with root cause
+
+cn.dev33.satoken.exception.NotLoginException: Token无效：Bearer "A0VV62sZge9LhD0wxkHpyXAJALfXqNT9"
+	at cn.dev33.satoken.exception.NotLoginException.newInstance(NotLoginException.java:137)
+	at cn.dev33.satoken.stp.StpLogic.getLoginId(StpLogic.java:646)
+	at cn.dev33.satoken.stp.StpLogic.checkLogin(StpLogic.java:626)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:929)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:940)
+	at cn.dev33.satoken.stp.StpUtil.getTokenSession(StpUtil.java:421)
+	at com.shou.hpsys.web.login.util.StpLoginUserUtil.getLoginUser(StpLoginUserUtil.java:23)
+	at com.shou.hpsys.web.login.service.impl.LoginServiceImpl.getLoginUser(LoginServiceImpl.java:76)
+	at com.shou.hpsys.web.login.controller.LoginController.getLoginUser(LoginController.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at cn.dev33.satoken.filter.SaServletFilter.doFilter(SaServletFilter.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+
+2024-03-22 15:39:38.843  INFO 20072 --- [http-nio-82-exec-9] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/doLogin  提交token=null
+2024-03-22 15:39:39.140  WARN 20072 --- [http-nio-82-exec-9] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 282775
+2024-03-22 15:44:12.483  INFO 20072 --- [http-nio-82-exec-10] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/getLoginUser  提交token=Bearer "6C8a6jhaxwDOsCD7FwnFSYxnSccGrKtx"
+2024-03-22 15:44:12.489 ERROR 20072 --- [http-nio-82-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is cn.dev33.satoken.exception.NotLoginException: Token无效：Bearer "6C8a6jhaxwDOsCD7FwnFSYxnSccGrKtx"] with root cause
+
+cn.dev33.satoken.exception.NotLoginException: Token无效：Bearer "6C8a6jhaxwDOsCD7FwnFSYxnSccGrKtx"
+	at cn.dev33.satoken.exception.NotLoginException.newInstance(NotLoginException.java:137)
+	at cn.dev33.satoken.stp.StpLogic.getLoginId(StpLogic.java:646)
+	at cn.dev33.satoken.stp.StpLogic.checkLogin(StpLogic.java:626)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:929)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:940)
+	at cn.dev33.satoken.stp.StpUtil.getTokenSession(StpUtil.java:421)
+	at com.shou.hpsys.web.login.util.StpLoginUserUtil.getLoginUser(StpLoginUserUtil.java:23)
+	at com.shou.hpsys.web.login.service.impl.LoginServiceImpl.getLoginUser(LoginServiceImpl.java:76)
+	at com.shou.hpsys.web.login.controller.LoginController.getLoginUser(LoginController.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at cn.dev33.satoken.filter.SaServletFilter.doFilter(SaServletFilter.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+
+2024-03-22 15:44:59.575  INFO 20072 --- [http-nio-82-exec-1] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/doLogin  提交token=null
+2024-03-22 15:44:59.982  WARN 20072 --- [http-nio-82-exec-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 320797
+2024-03-22 15:45:00.065  INFO 20072 --- [http-nio-82-exec-3] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/getLoginUser  提交token="LoF0PTbw8QceD6Oc3y1M7w0pMLs3XaVx"
+2024-03-22 15:45:00.067 ERROR 20072 --- [http-nio-82-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is cn.dev33.satoken.exception.NotLoginException: Token无效："LoF0PTbw8QceD6Oc3y1M7w0pMLs3XaVx"] with root cause
+
+cn.dev33.satoken.exception.NotLoginException: Token无效："LoF0PTbw8QceD6Oc3y1M7w0pMLs3XaVx"
+	at cn.dev33.satoken.exception.NotLoginException.newInstance(NotLoginException.java:137)
+	at cn.dev33.satoken.stp.StpLogic.getLoginId(StpLogic.java:646)
+	at cn.dev33.satoken.stp.StpLogic.checkLogin(StpLogic.java:626)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:929)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:940)
+	at cn.dev33.satoken.stp.StpUtil.getTokenSession(StpUtil.java:421)
+	at com.shou.hpsys.web.login.util.StpLoginUserUtil.getLoginUser(StpLoginUserUtil.java:23)
+	at com.shou.hpsys.web.login.service.impl.LoginServiceImpl.getLoginUser(LoginServiceImpl.java:76)
+	at com.shou.hpsys.web.login.controller.LoginController.getLoginUser(LoginController.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at cn.dev33.satoken.filter.SaServletFilter.doFilter(SaServletFilter.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+
+2024-03-22 15:46:27.229  INFO 20072 --- [http-nio-82-exec-6] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/doLogin  提交token=null
+2024-03-22 15:46:27.626  WARN 20072 --- [http-nio-82-exec-6] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 87589
+2024-03-22 15:47:35.024  INFO 20072 --- [http-nio-82-exec-9] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/getLoginUser  提交token="A3OnLb7FE7lsQmMthI1sha3AGxh2qinV"
+2024-03-22 15:47:35.027 ERROR 20072 --- [http-nio-82-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is cn.dev33.satoken.exception.NotLoginException: Token无效："A3OnLb7FE7lsQmMthI1sha3AGxh2qinV"] with root cause
+
+cn.dev33.satoken.exception.NotLoginException: Token无效："A3OnLb7FE7lsQmMthI1sha3AGxh2qinV"
+	at cn.dev33.satoken.exception.NotLoginException.newInstance(NotLoginException.java:137)
+	at cn.dev33.satoken.stp.StpLogic.getLoginId(StpLogic.java:646)
+	at cn.dev33.satoken.stp.StpLogic.checkLogin(StpLogic.java:626)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:929)
+	at cn.dev33.satoken.stp.StpLogic.getTokenSession(StpLogic.java:940)
+	at cn.dev33.satoken.stp.StpUtil.getTokenSession(StpUtil.java:421)
+	at com.shou.hpsys.web.login.util.StpLoginUserUtil.getLoginUser(StpLoginUserUtil.java:23)
+	at com.shou.hpsys.web.login.service.impl.LoginServiceImpl.getLoginUser(LoginServiceImpl.java:76)
+	at com.shou.hpsys.web.login.controller.LoginController.getLoginUser(LoginController.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at cn.dev33.satoken.filter.SaServletFilter.doFilter(SaServletFilter.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+
+2024-03-22 15:48:25.547  INFO 20072 --- [http-nio-82-exec-4] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/doLogin  提交token=null
+2024-03-22 15:48:25.894  WARN 20072 --- [http-nio-82-exec-4] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://127.0.0.1:3306/hpsys?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useUnicode=true, version : 1.2.8, lastPacketReceivedIdleMillis : 118224
+2024-03-22 15:48:39.370  INFO 20072 --- [http-nio-82-exec-1] com.shou.hpsys.config.WebMvcConfigure    : >>> 请求path=/auth/getLoginUser  提交token=nhsL5OZcUhpfoFWYxhstZv7QXXBaJx6J
+2024-03-22 16:02:28.974  INFO 20072 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2024-03-22 16:02:29.012  INFO 20072 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
