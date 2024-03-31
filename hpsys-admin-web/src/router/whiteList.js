@@ -1,7 +1,3 @@
-const constRouters = [
-	{
-		path: "/callback",
-	},
-];
+const constRouters = [];
 
 export default constRouters;

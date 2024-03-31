@@ -10,7 +10,7 @@ const routes = [
 		component: () => import("@/layout/index.vue"),
 		redirect: tool.data.get("MENU")
 			? routerUtil.getIndexMenu(tool.data.get("MENU")).path
-			: config.DASHBOARD_URL,
+			: config.HOMEPAGE_URL,
 		children: [],
 	},
 	{

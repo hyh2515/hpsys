@@ -1,6 +1,6 @@
 const DEFAULT_CONFIG = {
 	// 首页地址
-	HOMEPAGE_URL: "/index",
+	HOMEPAGE_URL: "/",
 
 	// 接口地址
 	API_URL: import.meta.env.VITE_API_BASEURL,
