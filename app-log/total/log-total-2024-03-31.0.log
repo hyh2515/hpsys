@@ -1,0 +1,24 @@
+2024-03-31 16:35:32.626  INFO 20392 --- [main] com.shou.hpsys.HpsysApplicationTests     : Starting HpsysApplicationTests using Java 1.8.0_402 on HYH with PID 20392 (started by 27121 in E:\PROGRAM_SAVE\IDEA\hpsys)
+2024-03-31 16:35:32.667  INFO 20392 --- [main] com.shou.hpsys.HpsysApplicationTests     : The following 1 profile is active: "dev"
+2024-03-31 16:35:36.322  INFO 20392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-03-31 16:35:36.326  INFO 20392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-31 16:35:36.393  INFO 20392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 0 Redis repository interfaces.
+2024-03-31 16:35:39.821  INFO 20392 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2024-03-31 16:35:44.543  INFO 20392 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-03-31 16:35:49.017  INFO 20392 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-31 16:35:49.484  INFO 20392 --- [main] com.fhs.common.spring.SpringContextUtil  : ------SpringContextUtil setApplicationContext-------
+2024-03-31 16:35:51.209  INFO 20392 --- [main] com.shou.hpsys.HpsysApplicationTests     : Started HpsysApplicationTests in 20.95 seconds (JVM running for 28.363)
+2024-03-31 16:35:52.036  INFO 20392 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2024-03-31 16:35:52.115  INFO 20392 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2024-03-31 19:44:17.706  INFO 25752 --- [main] com.shou.hpsys.HpsysApplicationTests     : Starting HpsysApplicationTests using Java 1.8.0_402 on HYH with PID 25752 (started by 27121 in E:\PROGRAM_SAVE\IDEA\hpsys)
+2024-03-31 19:44:17.733  INFO 25752 --- [main] com.shou.hpsys.HpsysApplicationTests     : The following 1 profile is active: "dev"
+2024-03-31 19:44:21.728  INFO 25752 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-03-31 19:44:21.760  INFO 25752 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-31 19:44:21.856  INFO 25752 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 0 Redis repository interfaces.
+2024-03-31 19:44:25.225  INFO 25752 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2024-03-31 19:44:28.037  INFO 25752 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-03-31 19:44:32.112  INFO 25752 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-03-31 19:44:32.583  INFO 25752 --- [main] com.fhs.common.spring.SpringContextUtil  : ------SpringContextUtil setApplicationContext-------
+2024-03-31 19:44:33.846  INFO 25752 --- [main] com.shou.hpsys.HpsysApplicationTests     : Started HpsysApplicationTests in 18.274 seconds (JVM running for 21.207)
+2024-03-31 19:44:34.580  INFO 25752 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2024-03-31 19:44:34.613  INFO 25752 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed

@@ -1,0 +1,3511 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_4" xmlns:data="http://jpmml.org/jpmml-model/InlineTable" version="4.4">
+	<Header>
+		<Application name="SkLearn2PMML package" version="0.105.0"/>
+		<Timestamp>2024-04-01T08:02:01Z</Timestamp>
+	</Header>
+	<MiningBuildTask>
+		<Extension name="repr">PMMLPipeline(steps=[('mapper', DataFrameMapper(drop_cols=[],
+                features=[(['coordinateX', 'coordinateY', 'decorationCondition',
+                            'deed', 'elevator', 'facility0', 'facility1',
+                            'facility2', 'facility3', 'facility4', 'facility5',
+                            'level', 'total', 'framework', 'houseTerm',
+                            'ownership', 'purpose', 'apt', 'lift', 'district',
+                            'rights', 'scale', 'structure', 'bath', 'kitchen',
+                            'room', 'saloon'],
+                           StandardScaler())])),
+       ('final_estimator', RandomForestRegressor(max_depth=3, n_jobs=-1, random_state=0))])</Extension>
+	</MiningBuildTask>
+	<DataDictionary>
+		<DataField name="price" optype="continuous" dataType="double"/>
+		<DataField name="coordinateX" optype="continuous" dataType="double"/>
+		<DataField name="coordinateY" optype="continuous" dataType="double"/>
+		<DataField name="total" optype="continuous" dataType="double"/>
+		<DataField name="district" optype="continuous" dataType="double"/>
+		<DataField name="scale" optype="continuous" dataType="double"/>
+	</DataDictionary>
+	<MiningModel functionName="regression" algorithmName="sklearn.ensemble._forest.RandomForestRegressor">
+		<MiningSchema>
+			<MiningField name="price" usageType="target"/>
+			<MiningField name="scale"/>
+			<MiningField name="district"/>
+			<MiningField name="coordinateY"/>
+			<MiningField name="coordinateX"/>
+			<MiningField name="total"/>
+		</MiningSchema>
+		<LocalTransformations>
+			<DerivedField name="standardScaler(coordinateX)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="coordinateX"/>
+						<Constant dataType="double">121.45034823854161</Constant>
+					</Apply>
+					<Constant dataType="double">0.1295506681241429</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(coordinateY)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="coordinateY"/>
+						<Constant dataType="double">31.202774113255018</Constant>
+					</Apply>
+					<Constant dataType="double">0.11227531157160035</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(total)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="total"/>
+						<Constant dataType="double">10.866313632397995</Constant>
+					</Apply>
+					<Constant dataType="double">7.720714560826592</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(district)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="district"/>
+						<Constant dataType="double">310102.9738673484</Constant>
+					</Apply>
+					<Constant dataType="double">30.5877188536492</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="standardScaler(scale)" optype="continuous" dataType="double">
+				<Apply function="/">
+					<Apply function="-">
+						<FieldRef field="scale"/>
+						<Constant dataType="double">85.24755635360236</Constant>
+					</Apply>
+					<Constant dataType="double">41.343827950746636</Constant>
+				</Apply>
+			</DerivedField>
+			<DerivedField name="float(standardScaler(coordinateX))" optype="continuous" dataType="float">
+				<FieldRef field="standardScaler(coordinateX)"/>
+			</DerivedField>
+			<DerivedField name="float(standardScaler(coordinateY))" optype="continuous" dataType="float">
+				<FieldRef field="standardScaler(coordinateY)"/>
+			</DerivedField>
+			<DerivedField name="float(standardScaler(total))" optype="continuous" dataType="float">
+				<FieldRef field="standardScaler(total)"/>
+			</DerivedField>
+			<DerivedField name="float(standardScaler(district))" optype="continuous" dataType="float">
+				<FieldRef field="standardScaler(district)"/>
+			</DerivedField>
+			<DerivedField name="float(standardScaler(scale))" optype="continuous" dataType="float">
+				<FieldRef field="standardScaler(scale)"/>
+			</DerivedField>
+			<DerivedField name="double(float(standardScaler(scale)))" optype="continuous" dataType="double">
+				<FieldRef field="float(standardScaler(scale))"/>
+			</DerivedField>
+			<DerivedField name="double(float(standardScaler(district)))" optype="continuous" dataType="double">
+				<FieldRef field="float(standardScaler(district))"/>
+			</DerivedField>
+			<DerivedField name="double(float(standardScaler(coordinateY)))" optype="continuous" dataType="double">
+				<FieldRef field="float(standardScaler(coordinateY))"/>
+			</DerivedField>
+			<DerivedField name="double(float(standardScaler(coordinateX)))" optype="continuous" dataType="double">
+				<FieldRef field="float(standardScaler(coordinateX))"/>
+			</DerivedField>
+			<DerivedField name="double(float(standardScaler(total)))" optype="continuous" dataType="double">
+				<FieldRef field="float(standardScaler(total))"/>
+			</DerivedField>
+		</LocalTransformations>
+		<Segmentation multipleModelMethod="average" missingPredictionTreatment="returnMissing">
+			<Segment id="1">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+						<MiningField name="double(float(standardScaler(coordinateX)))"/>
+					</MiningSchema>
+					<Node score="2.969045081967213E7">
+						<True/>
+						<Node score="5276878.468516543">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.181372046470642"/>
+							<Node score="4146825.857519789">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.18763244152069092"/>
+								<Node score="2910234.3485617596">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.47752124071121216"/>
+								</Node>
+							</Node>
+							<Node score="8363946.496815287">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.2321391784181483E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.124616622924805"/>
+							<Node score="7219156.028368794">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.23132969439029694"/>
+							</Node>
+						</Node>
+						<Node score="1.42335E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateX)))" operator="lessOrEqual" value="-0.7889634370803833"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="2">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="3.0824010416666668E7">
+						<True/>
+						<Node score="5191192.896667096">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1812511086463928"/>
+							<Node score="4050161.527616012">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.16634753346443176"/>
+								<Node score="2842585.4498493327">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5520184636116028"/>
+								</Node>
+							</Node>
+							<Node score="8238688.768953997">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.4027712700369913E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.304087400436401"/>
+							<Node score="9156681.675062973">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="1.4701311475409836E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.36573144793510437"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="3">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="2.9548125E7">
+						<True/>
+						<Node score="5140770.248808893">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1036095023155212"/>
+							<Node score="4095038.5202135774">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.1646544113755226"/>
+								<Node score="2861550.5920344456">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5263798236846924"/>
+								</Node>
+							</Node>
+							<Node score="8207467.943602022">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.1659984036488028E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.670377254486084"/>
+							<Node score="6980683.312262958">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.27053242921829224"/>
+							</Node>
+						</Node>
+						<Node score="1.9402E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.69568133354187"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="4">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="9.25E7">
+						<True/>
+						<Node score="5159767.006369427">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1730274558067322"/>
+							<Node score="4088745.9469769215">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.16634753346443176"/>
+								<Node score="2851446.3721457105">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5244448184967041"/>
+								</Node>
+							</Node>
+							<Node score="8292433.570113128">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.4127614487415593E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.378826379776001"/>
+							<Node score="9222378.643755753">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="2.711194214876033E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="12.216755867004395"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="5">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="3.138549295774648E7">
+						<True/>
+						<Node score="5115647.775292071">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1892330050468445"/>
+							<Node score="4038943.2248296747">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.14578823745250702"/>
+								<Node score="2834400.393144542">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5520184636116028"/>
+								</Node>
+							</Node>
+							<Node score="8264828.08716707">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.4003107825015403E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.311101675033569"/>
+							<Node score="9236617.41935484">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="1.5584090909090908E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.36573144793510437"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="6">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+					</MiningSchema>
+					<Node score="3.1221066666666668E7">
+						<True/>
+						<Node score="5342139.6139206095">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.181372046470642"/>
+							<Node score="4109753.7081120675">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.1982749104499817"/>
+								<Node score="2868027.7097641085">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5266216993331909"/>
+								</Node>
+							</Node>
+							<Node score="8385802.9328531">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="8543957.568339454">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.185661554336548"/>
+							<Node score="1.2850954198473282E7">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.837004365904366E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.845280408859253"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="7">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="1.0E8">
+						<True/>
+						<Node score="5287755.588876772">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1875398755073547"/>
+							<Node score="4048966.7762784897">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.19440492242574692"/>
+								<Node score="2821413.721682848">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5853970646858215"/>
+								</Node>
+							</Node>
+							<Node score="8430931.377684651">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.2254617731721358E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.279536962509155"/>
+							<Node score="7048105.181747873">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.35363173484802246"/>
+							</Node>
+						</Node>
+						<Node score="2.7835579710144926E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="15.329795360565186"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="8">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="2.4926831683168318E7">
+						<True/>
+						<Node score="5168598.595020952">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1892330050468445"/>
+							<Node score="4002904.7939342055">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.1473604142665863"/>
+								<Node score="2809027.718960539">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5853970646858215"/>
+								</Node>
+							</Node>
+							<Node score="8276387.424425635">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.2325923859343214E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.279536962509155"/>
+							<Node score="7336238.334529792">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.27053242921829224"/>
+							</Node>
+						</Node>
+						<Node score="3.739809523809524E7">
+							<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.11527935788035393"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="9">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="3.315984496124031E7">
+						<True/>
+						<Node score="5063898.353704166">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.091999590396881"/>
+							<Node score="4022914.9702166654">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.1266801804304123"/>
+								<Node score="2847584.8025062964">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.551655650138855"/>
+								</Node>
+							</Node>
+							<Node score="8130813.584531482">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.3675433653303219E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.14940881729126"/>
+							<Node score="8913755.781938326">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="2.0606054421768706E7">
+							<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.8592062890529633"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="10">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="4.019672131147541E7">
+						<True/>
+						<Node score="5254971.599828742">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1563381552696228"/>
+							<Node score="4164615.5214022608">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.21085235476493835"/>
+								<Node score="2891429.983431412">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.4834471642971039"/>
+								</Node>
+							</Node>
+							<Node score="8371369.000786782">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.208748002174504E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.124616622924805"/>
+							<Node score="6905852.124183007">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.4028322100639343"/>
+							</Node>
+						</Node>
+						<Node score="2.434244094488189E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="6.58991813659668"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="11">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+					</MiningSchema>
+					<Node score="1.0E8">
+						<True/>
+						<Node score="5124974.193548387">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.0912739634513855"/>
+							<Node score="4072796.0845245495">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.1639287918806076"/>
+								<Node score="2844375.7190062418">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5517765879631042"/>
+								</Node>
+							</Node>
+							<Node score="8193854.851861919">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="8529289.864029666">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.311101675033569"/>
+							<Node score="1.2975790905037895E7">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="2.830423529411765E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="15.329795360565186"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="12">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="3.139497409326425E7">
+						<True/>
+						<Node score="5209212.3655913975">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.181372046470642"/>
+							<Node score="4043231.3016727553">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.14578823745250702"/>
+								<Node score="2862585.173405101">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5529859662055969"/>
+								</Node>
+							</Node>
+							<Node score="8283718.413320274">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.2207024035774175E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.311101675033569"/>
+							<Node score="7149199.35948759">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.3654865175485611"/>
+							</Node>
+						</Node>
+						<Node score="1.5812340425531914E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.33347146213054657"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="13">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+					</MiningSchema>
+					<Node score="3.0647810218978103E7">
+						<True/>
+						<Node score="5201952.517236893">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1848792433738708"/>
+							<Node score="4059233.1999029596">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.17118501663208008"/>
+								<Node score="2832119.7082112352">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5570977926254272"/>
+								</Node>
+							</Node>
+							<Node score="8300513.593672764">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="8350243.407707911">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="2.9293960332870483"/>
+							<Node score="1.2792961283185842E7">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.8059674230145868E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="5.141213417053223"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="14">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="3.813E7">
+						<True/>
+						<Node score="5365981.405233099">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.245831549167633"/>
+							<Node score="4084642.0658012535">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.20867548882961273"/>
+								<Node score="2817309.59752322">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5853970646858215"/>
+								</Node>
+							</Node>
+							<Node score="8471292.572006064">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.3509102167182663E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.0187684297561646"/>
+							<Node score="9051092.263136119">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="1.8587983180428136E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="6.126245498657227"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="15">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="1.3254285714285715E7">
+						<True/>
+						<Node score="5153476.559369574">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.0944183468818665"/>
+							<Node score="4037780.5985305537">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.1639287918806076"/>
+								<Node score="2813293.4313156707">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.585155189037323"/>
+								</Node>
+							</Node>
+							<Node score="8178415.12469831">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.3799877837837838E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.293081998825073"/>
+							<Node score="8967123.309897242">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="3.0228589743589744E7">
+							<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.42586152255535126"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="16">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateX)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="2.8296434426229507E7">
+						<True/>
+						<Node score="5254720.782800441">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.179557979106903"/>
+							<Node score="4134257.9840622908">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.20698237419128418"/>
+								<Node score="2862693.1216931217">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5162211060523987"/>
+								</Node>
+							</Node>
+							<Node score="8466037.27369542">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.3790707504810777E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.8922966718673706"/>
+							<Node score="9101127.948303716">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="1.7387264957264956E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateX)))" operator="lessOrEqual" value="-0.4287916123867035"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="17">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="4.103890909090909E7">
+						<True/>
+						<Node score="5314881.789574497">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1877817511558533"/>
+							<Node score="4093011.0748426206">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.20867548882961273"/>
+								<Node score="2830979.080017382">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5517765879631042"/>
+								</Node>
+							</Node>
+							<Node score="8405929.547844375">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.4091558252427185E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.320292711257935"/>
+							<Node score="9235646.514701024">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="2.451167597765363E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="6.64204216003418"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="18">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+					</MiningSchema>
+					<Node score="3.82389552238806E7">
+						<True/>
+						<Node score="5120596.776396668">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1004652380943298"/>
+							<Node score="4044987.075733784">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.17082220315933228"/>
+								<Node score="2841262.2920171996">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5558884739875793"/>
+								</Node>
+							</Node>
+							<Node score="8213926.4744776515">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="8293383.101459111">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.3361072540283203"/>
+							<Node score="1.2759648292682927E7">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.970943992248062E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="6.0829503536224365"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="19">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+					</MiningSchema>
+					<Node score="3.882068493150685E7">
+						<True/>
+						<Node score="5327696.461560324">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.179557979106903"/>
+							<Node score="4138076.3449132983">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.21206173300743103"/>
+								<Node score="2869897.8036485836">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5210585594177246"/>
+								</Node>
+							</Node>
+							<Node score="8462275.614471141">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="8780179.892280072">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.05822229385376"/>
+							<Node score="1.3302433433433434E7">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="2.2781037735849056E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="6.083071231842041"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="20">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="2.178525305410122E7">
+						<True/>
+						<Node score="5110734.526472782">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1004652380943298"/>
+							<Node score="4095821.048798252">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.14119262993335724"/>
+								<Node score="2920772.5386020257">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.46518567204475403"/>
+								</Node>
+							</Node>
+							<Node score="8155688.900203666">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="8203917.77378815">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="2.9056923389434814"/>
+							<Node score="1.2359453907815631E7">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.030988125E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.46372272074222565"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="21">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="3.0955502645502646E7">
+						<True/>
+						<Node score="5526542.860749905">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.4060730934143066"/>
+							<Node score="4122163.5947338296">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.2234298139810562"/>
+								<Node score="2832846.325167038">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5522603392601013"/>
+								</Node>
+							</Node>
+							<Node score="8771358.148413267">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.3571930600649351E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.297314882278442"/>
+							<Node score="7927480.934809349">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.35227346420288086"/>
+							</Node>
+						</Node>
+						<Node score="2.0692E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.22196877747774124"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="22">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="3.1637777777777776E7">
+						<True/>
+						<Node score="5075341.247789846">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.110261082649231"/>
+							<Node score="4033891.3935720148">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.14723947644233704"/>
+								<Node score="2829063.7425447316">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5597584247589111"/>
+								</Node>
+							</Node>
+							<Node score="8197455.061983471">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.3845506425233645E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.289211988449097"/>
+							<Node score="9017223.66962306">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="1.565921875E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.24445368349552155"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="23">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+					</MiningSchema>
+					<Node score="4.3921428571428575E7">
+						<True/>
+						<Node score="5246458.420102735">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1340857148170471"/>
+							<Node score="4091666.998886088">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.19440492242574692"/>
+								<Node score="2840979.029247044">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5522603392601013"/>
+								</Node>
+							</Node>
+							<Node score="8362096.862960924">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="9123801.545680376">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.8202182054519653"/>
+							<Node score="1.4295331838565022E7">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.11527935788035393"/>
+							</Node>
+						</Node>
+						<Node score="2.2960838323353294E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="8.353180408477783"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="24">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="4.0677083333333336E7">
+						<True/>
+						<Node score="5213714.387060159">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.100586175918579"/>
+							<Node score="4104450.2078669653">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.18835806846618652"/>
+								<Node score="2887596.6497055627">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.4955408573150635"/>
+								</Node>
+							</Node>
+							<Node score="8226493.392070484">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.3333621173469387E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.2329479455947876"/>
+							<Node score="8673025.796661608">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="2.008745438596491E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="6.593667268753052"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="25">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+					</MiningSchema>
+					<Node score="3.375E7">
+						<True/>
+						<Node score="5268665.278810409">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1340857148170471"/>
+							<Node score="4110844.456030587">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.21738295257091522"/>
+								<Node score="2854691.8509542565">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5430691242218018"/>
+								</Node>
+							</Node>
+							<Node score="8405356.511490867">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="9322324.279835392">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.7948215007781982"/>
+							<Node score="1.4133744371822802E7">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.11527935788035393"/>
+							</Node>
+						</Node>
+						<Node score="2.0294979591836736E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.845280408859253"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="26">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="2.9097292817679558E7">
+						<True/>
+						<Node score="5418116.504854369">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.3004950881004333"/>
+							<Node score="4077515.821028089">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.21278734505176544"/>
+								<Node score="2817187.3554356205">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5846714377403259"/>
+								</Node>
+							</Node>
+							<Node score="8622540.4853129">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.2311063056379821E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.3361072540283203"/>
+							<Node score="7188692.220969561">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.3653840869665146"/>
+							</Node>
+						</Node>
+						<Node score="1.815145343137255E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.7198686599731445"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="27">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+					</MiningSchema>
+					<Node score="3.51910989010989E7">
+						<True/>
+						<Node score="5231106.8913133545">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1340857148170471"/>
+							<Node score="4064500.4512363877">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.18763244152069092"/>
+								<Node score="2842427.596803934">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5520184636116028"/>
+								</Node>
+							</Node>
+							<Node score="8291686.900958466">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="8375222.861250899">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.1709072589874268"/>
+							<Node score="1.2859382308845578E7">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.8998190476190478E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="5.5673956871032715"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="28">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="3.1755238095238097E7">
+						<True/>
+						<Node score="5216434.948492941">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1875398755073547"/>
+							<Node score="4138271.3220338984">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.1639287918806076"/>
+								<Node score="2888670.530083518">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.4834471642971039"/>
+								</Node>
+							</Node>
+							<Node score="8269493.427704752">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.23688450985996E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.311101675033569"/>
+							<Node score="6973109.293680297">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.35363173484802246"/>
+							</Node>
+						</Node>
+						<Node score="1.3313809523809524E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.49046503007411957"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="29">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="1.2641E7">
+						<True/>
+						<Node score="5201910.013003902">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.181372046470642"/>
+							<Node score="4044576.1893114834">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.16646847128868103"/>
+								<Node score="2846795.975609756">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5532278418540955"/>
+								</Node>
+							</Node>
+							<Node score="8368651.302605211">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.3913534021871204E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.155697584152222"/>
+							<Node score="9202446.555819478">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="2.8153640350877192E7">
+							<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.42586152255535126"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="30">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="1.0E8">
+						<True/>
+						<Node score="5458840.479360852">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.3026719689369202"/>
+							<Node score="4127078.1410769406">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.23092790693044662"/>
+								<Node score="2862894.1558839763">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5452460050582886"/>
+								</Node>
+							</Node>
+							<Node score="8692735.539277595">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.2926079685362518E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.378826379776001"/>
+							<Node score="7190269.544924154">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.46372272074222565"/>
+							</Node>
+						</Node>
+						<Node score="2.8998076923076924E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="15.329795360565186"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="31">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="1.28875E7">
+						<True/>
+						<Node score="5165739.217787302">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1004652380943298"/>
+							<Node score="4039832.2466638233">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.16634753346443176"/>
+								<Node score="2826491.089723688">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5595165491104126"/>
+								</Node>
+							</Node>
+							<Node score="8219393.288590604">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.2003215091299677E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.279536962509155"/>
+							<Node score="7053738.200125866">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.25143206119537354"/>
+							</Node>
+						</Node>
+						<Node score="3.0601361702127658E7">
+							<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.42586152255535126"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="32">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+					</MiningSchema>
+					<Node score="5.426411764705882E7">
+						<True/>
+						<Node score="5142116.334345702">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1004652380943298"/>
+							<Node score="4076458.8504043957">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.16634753346443176"/>
+								<Node score="2835558.769230769">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5520184636116028"/>
+								</Node>
+							</Node>
+							<Node score="8190221.75066313">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="8318071.355411403">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.3361072540283203"/>
+							<Node score="1.2678279024390243E7">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="2.132193612774451E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="9.454191207885742"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="33">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="3.815E7">
+						<True/>
+						<Node score="5237475.584682601">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1797998547554016"/>
+							<Node score="4117693.327117741">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.16634753346443176"/>
+								<Node score="2883885.269283432">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.4932430684566498"/>
+								</Node>
+							</Node>
+							<Node score="8314889.730002523">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.2029575968776137E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.124616622924805"/>
+							<Node score="6780581.211589113">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.46372272074222565"/>
+							</Node>
+						</Node>
+						<Node score="2.4283502304147467E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="6.58991813659668"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="34">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="3.107918552036199E7">
+						<True/>
+						<Node score="5309803.640911617">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1810092329978943"/>
+							<Node score="4158412.8732256484">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.22101107239723206"/>
+								<Node score="2882863.7975880825">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5017086565494537"/>
+								</Node>
+							</Node>
+							<Node score="8437833.422890918">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.234374813174647E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.311101675033569"/>
+							<Node score="6962292.682926829">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.3653840869665146"/>
+							</Node>
+						</Node>
+						<Node score="1.6708888888888888E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.36573144793510437"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="35">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="3.160898395721925E7">
+						<True/>
+						<Node score="5188346.093655953">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1794370412826538"/>
+							<Node score="4092791.5766738662">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.13853201270103455"/>
+								<Node score="2902322.5590353375">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.46518567204475403"/>
+								</Node>
+							</Node>
+							<Node score="8333464.844720497">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.4114329106280193E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.316180944442749"/>
+							<Node score="9183648.690292759">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="1.7340625E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.23322681337594986"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="36">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="4.22437037037037E7">
+						<True/>
+						<Node score="5242872.932017239">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1340857148170471"/>
+							<Node score="4087907.1200094777">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.19464679062366486"/>
+								<Node score="2826147.5318224155">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5529859662055969"/>
+								</Node>
+							</Node>
+							<Node score="8332799.253532391">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.2164623598654708E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.279536962509155"/>
+							<Node score="7025123.859191656">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.27053242921829224"/>
+							</Node>
+						</Node>
+						<Node score="2.599725E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="6.583387613296509"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="37">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="3.101669724770642E7">
+						<True/>
+						<Node score="5125589.153959665">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1800417304039001"/>
+							<Node score="4035201.0495036985">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.14723947644233704"/>
+								<Node score="2842725.0844335277">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5551628470420837"/>
+								</Node>
+							</Node>
+							<Node score="8304347.507331379">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.3959026976160603E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.311101675033569"/>
+							<Node score="9270557.88455337">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="1.6070625E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.36573144793510437"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="38">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="3.102771276595745E7">
+						<True/>
+						<Node score="5167649.857142857">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.0845015048980713"/>
+							<Node score="4088797.5899302033">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.188116192817688"/>
+								<Node score="2844444.095361301">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5520184636116028"/>
+								</Node>
+							</Node>
+							<Node score="8301853.211009175">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.200044740346205E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.316422939300537"/>
+							<Node score="7094006.432748538">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.25143206119537354"/>
+							</Node>
+						</Node>
+						<Node score="1.284609756097561E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.49046503007411957"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="39">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+					</MiningSchema>
+					<Node score="1.0E8">
+						<True/>
+						<Node score="5317472.278081011">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1895958185195923"/>
+							<Node score="4116983.719695629">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.21762482821941376"/>
+								<Node score="2876551.8126978436">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5258960723876953"/>
+								</Node>
+							</Node>
+							<Node score="8468672.25527312">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="8972802.806499261">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.279536962509155"/>
+							<Node score="1.3488923929471033E7">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="2.7471525423728812E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="14.212821006774902"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="40">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="3.0349583333333332E7">
+						<True/>
+						<Node score="5323636.50816592">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.179557979106903"/>
+							<Node score="4124870.9870627695">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.21278734505176544"/>
+								<Node score="2874722.489458994">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5208166837692261"/>
+								</Node>
+							</Node>
+							<Node score="8357051.385525961">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.3879429090909092E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.049877643585205"/>
+							<Node score="9052444.794952681">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="1.5678125E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.21074190735816956"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="41">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="3.1182485207100593E7">
+						<True/>
+						<Node score="5189625.706020113">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.0918786525726318"/>
+							<Node score="4080663.100954233">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.17166875302791595"/>
+								<Node score="2851857.610575735">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5522603392601013"/>
+								</Node>
+							</Node>
+							<Node score="8222678.437667201">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.180012760960334E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.311101675033569"/>
+							<Node score="6894315.355329949">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.35363173484802246"/>
+							</Node>
+						</Node>
+						<Node score="1.62125E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.22196877747774124"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="42">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="3.997163636363637E7">
+						<True/>
+						<Node score="5263630.712731229">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1797998547554016"/>
+							<Node score="4153418.7397975842">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.197065532207489"/>
+								<Node score="2882658.82086681">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.48356810212135315"/>
+								</Node>
+							</Node>
+							<Node score="8311407.231459488">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.1303491166077739E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.292448878288269"/>
+							<Node score="5931171.786120592">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.5836021304130554"/>
+							</Node>
+						</Node>
+						<Node score="1.956255330882353E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="6.083071231842041"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="43">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="4.043603773584906E7">
+						<True/>
+						<Node score="5292029.452243325">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.181372046470642"/>
+							<Node score="4097518.8211263497">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.2064986228942871"/>
+								<Node score="2842636.403344565">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5520184636116028"/>
+								</Node>
+							</Node>
+							<Node score="8408690.294438386">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.2223058791507894E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.297314882278442"/>
+							<Node score="6930534.357316087">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.4028322100639343"/>
+							</Node>
+						</Node>
+						<Node score="2.427561403508772E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="6.58991813659668"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="44">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="3.071080808080808E7">
+						<True/>
+						<Node score="5286481.719508712">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1875398755073547"/>
+							<Node score="4119755.20380356">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.21230360865592957"/>
+								<Node score="2841414.4838212635">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5551628470420837"/>
+								</Node>
+							</Node>
+							<Node score="8481252.876639016">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.2355410343847685E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.320292711257935"/>
+							<Node score="7334050.151975684">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.27053242921829224"/>
+							</Node>
+						</Node>
+						<Node score="1.65E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.36573144793510437"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="45">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateX)))"/>
+					</MiningSchema>
+					<Node score="3.2025222222222224E7">
+						<True/>
+						<Node score="5243267.46506986">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.181372046470642"/>
+							<Node score="4043158.5750510236">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.16634753346443176"/>
+								<Node score="2857921.566197881">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5517765879631042"/>
+								</Node>
+							</Node>
+							<Node score="8356091.434312987">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="8943236.621769203">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.279536962509155"/>
+							<Node score="1.3414648401826484E7">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.966292682926829E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateX)))" operator="lessOrEqual" value="-0.22565872222185135"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="46">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="3.964864406779661E7">
+						<True/>
+						<Node score="5448244.646749583">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.3029138445854187"/>
+							<Node score="4107906.976744186">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.20698237419128418"/>
+								<Node score="2831807.3451218004">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5520184636116028"/>
+								</Node>
+							</Node>
+							<Node score="8583265.928659286">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.2650294229549779E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.293081998825073"/>
+							<Node score="6608892.171344166">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.5866482257843018"/>
+							</Node>
+						</Node>
+						<Node score="2.477920792079208E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="6.58991813659668"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="47">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+					</MiningSchema>
+					<Node score="2.453697142857143E7">
+						<True/>
+						<Node score="5180883.6294416245">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1623849272727966"/>
+							<Node score="4046874.1999015263">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.1639287918806076"/>
+								<Node score="2834864.57879335">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5554047226905823"/>
+								</Node>
+							</Node>
+							<Node score="8280752.185089975">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="8799497.031086273">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.297314882278442"/>
+							<Node score="1.3459333492366413E7">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="3.886918918918919E7">
+							<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.11527935788035393"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="48">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="2.9078486486486487E7">
+						<True/>
+						<Node score="5056670.127301941">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.0918786525726318"/>
+							<Node score="4019116.9571484732">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.12716393172740936"/>
+								<Node score="2850464.7166361976">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5520184636116028"/>
+								</Node>
+							</Node>
+							<Node score="8051699.51119115">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.2953250159948817E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.1836055517196655"/>
+							<Node score="8494769.23076923">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="1.7799489559164733E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.661818981170654"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="49">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="3.2175434782608695E7">
+						<True/>
+						<Node score="5211409.857497712">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.181372046470642"/>
+							<Node score="4066619.6831200486">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.1752968728542328"/>
+								<Node score="2846054.3042270904">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5520184636116028"/>
+								</Node>
+							</Node>
+							<Node score="8335202.909846714">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.2042171572327044E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.378826379776001"/>
+							<Node score="6364321.546961326">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.5836021304130554"/>
+							</Node>
+						</Node>
+						<Node score="1.661703125E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.36573144793510437"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="50">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+					</MiningSchema>
+					<Node score="2.6981887550200805E7">
+						<True/>
+						<Node score="5146331.015299027">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.0845015048980713"/>
+							<Node score="4055992.5368606276">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.1665894091129303"/>
+								<Node score="2834945.6690468797">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5551628470420837"/>
+								</Node>
+							</Node>
+							<Node score="8191089.324618736">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="8198438.792254677">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.019373059272766"/>
+							<Node score="1.2447777033492822E7">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.723803311258278E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.334805250167847"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="51">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="1.1934375E7">
+						<True/>
+						<Node score="5331534.37239076">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1794370412826538"/>
+							<Node score="4093379.8127559978">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.20819173753261566"/>
+								<Node score="2831525.4561143983">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5520184636116028"/>
+								</Node>
+							</Node>
+							<Node score="8340535.665482372">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.4149149878640777E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.387775659561157"/>
+							<Node score="9363807.633117883">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="3.1451256281407036E7">
+							<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.42586152255535126"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="52">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="3.145519801980198E7">
+						<True/>
+						<Node score="5260232.608401999">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.179557979106903"/>
+							<Node score="4081311.410601977">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.18823713064193726"/>
+								<Node score="2849513.490364026">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5517765879631042"/>
+								</Node>
+							</Node>
+							<Node score="8363659.340659341">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.225057880910683E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.271434307098389"/>
+							<Node score="7413433.582089553">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.27053242921829224"/>
+							</Node>
+						</Node>
+						<Node score="1.6107222222222222E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.36573144793510437"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="53">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="3.1758898678414095E7">
+						<True/>
+						<Node score="5215339.139344262">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.181372046470642"/>
+							<Node score="4064633.617447982">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.17166875302791595"/>
+								<Node score="2861140.383800472">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5263798236846924"/>
+								</Node>
+							</Node>
+							<Node score="8287071.588924919">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.3860660923076924E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.279536962509155"/>
+							<Node score="9264333.873581847">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="1.5572068965517242E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.36573144793510437"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="54">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="1.0E8">
+						<True/>
+						<Node score="5144624.0">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1892330050468445"/>
+							<Node score="4056331.7280273745">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.14578823745250702"/>
+								<Node score="2841969.5428323303">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5520184636116028"/>
+								</Node>
+							</Node>
+							<Node score="8314959.1293833135">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.246022560455192E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.369514226913452"/>
+							<Node score="7264419.16605706">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.27053242921829224"/>
+							</Node>
+						</Node>
+						<Node score="2.731817427385892E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="15.051640033721924"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="55">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+					</MiningSchema>
+					<Node score="2.9432420382165603E7">
+						<True/>
+						<Node score="5154978.675958188">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.0898227095603943"/>
+							<Node score="4055250.215543786">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.1639287918806076"/>
+								<Node score="2837272.438054451">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5520184636116028"/>
+								</Node>
+							</Node>
+							<Node score="8237243.315508021">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="8295691.013020006">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.33780038356781"/>
+							<Node score="1.2609585273159144E7">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.8307227513227515E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.897525310516357"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="56">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+					</MiningSchema>
+					<Node score="3.673151515151515E7">
+						<True/>
+						<Node score="5276698.1711387">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1730274558067322"/>
+							<Node score="4101882.488192891">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.18763244152069092"/>
+								<Node score="2861861.0533816284">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5263798236846924"/>
+								</Node>
+							</Node>
+							<Node score="8383646.3446819745">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="8848045.324768024">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.155697584152222"/>
+							<Node score="1.349480930930931E7">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="2.4032451923076924E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="6.1540610790252686"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="57">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="3.0543277777777776E7">
+						<True/>
+						<Node score="5089363.33418563">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.0912739634513855"/>
+							<Node score="4059413.6564158304">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.1443369835615158"/>
+								<Node score="2845049.572127139">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5517765879631042"/>
+								</Node>
+							</Node>
+							<Node score="8151336.320506062">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.1592869030597655E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.3361072540283203"/>
+							<Node score="7066444.792973652">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.20874681323766708"/>
+							</Node>
+						</Node>
+						<Node score="1.8176568922305763E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.7198686599731445"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="58">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="2.543310185185185E7">
+						<True/>
+						<Node score="5141507.870652837">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.181372046470642"/>
+							<Node score="3993885.8108515902">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.14216011762619019"/>
+								<Node score="2812728.5899935025">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5853970646858215"/>
+								</Node>
+							</Node>
+							<Node score="8228665.36394724">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.2281328298660588E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.320292711257935"/>
+							<Node score="7111238.888888889">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.3654865175485611"/>
+							</Node>
+						</Node>
+						<Node score="3.999962962962963E7">
+							<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.08258650079369545"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="59">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="3.1900391061452515E7">
+						<True/>
+						<Node score="5148791.989319092">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1004652380943298"/>
+							<Node score="4037434.380206084">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.1639287918806076"/>
+								<Node score="2841130.520602023">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5544372200965881"/>
+								</Node>
+							</Node>
+							<Node score="8255720.615063852">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.3713759575721862E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.108532190322876"/>
+							<Node score="8916495.469988676">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="2.0486466165413532E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.845280408859253"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="60">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="3.999723076923077E7">
+						<True/>
+						<Node score="5358776.1668574335">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.2557483315467834"/>
+							<Node score="4097216.336872587">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.18763244152069092"/>
+								<Node score="2836330.762586377">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.551655650138855"/>
+								</Node>
+							</Node>
+							<Node score="8468519.424460432">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.4578859025032938E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.279536962509155"/>
+							<Node score="9539267.039106146">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="2.3719356435643565E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="6.083071231842041"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="61">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateX)))"/>
+					</MiningSchema>
+					<Node score="3.247090476190476E7">
+						<True/>
+						<Node score="5167117.162307417">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1794370412826538"/>
+							<Node score="4018415.916867317">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.13853201270103455"/>
+								<Node score="2841491.23468426">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5590327978134155"/>
+								</Node>
+							</Node>
+							<Node score="8265051.695119019">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="8972851.36103152">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.279536962509155"/>
+							<Node score="1.3473633168316832E7">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.4555277777777778E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateX)))" operator="lessOrEqual" value="-0.7889634370803833"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="62">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+					</MiningSchema>
+					<Node score="2.9316108108108107E7">
+						<True/>
+						<Node score="5239189.6694214875">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.174720585346222"/>
+							<Node score="4120437.180286962">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.19464679062366486"/>
+								<Node score="2891239.581506809">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5123510956764221"/>
+								</Node>
+							</Node>
+							<Node score="8380090.281465746">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="8546802.303262956">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.1837265491485596"/>
+							<Node score="1.2856338658146964E7">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.8132883259911895E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.7198686599731445"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="63">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="3.420295081967213E7">
+						<True/>
+						<Node score="5129218.11556481">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.0947811603546143"/>
+							<Node score="4025871.767369801">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.1639287918806076"/>
+								<Node score="2812638.7798442626">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5853970646858215"/>
+								</Node>
+							</Node>
+							<Node score="8177109.712722298">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.392226333520494E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.293081998825073"/>
+							<Node score="8963857.023875624">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="2.1433934426229507E7">
+							<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.8592062890529633"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="64">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="2.924832402234637E7">
+						<True/>
+						<Node score="5259921.609872388">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1800417304039001"/>
+							<Node score="4115424.92255538">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.21206173300743103"/>
+								<Node score="2836270.5911149187">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5517765879631042"/>
+								</Node>
+							</Node>
+							<Node score="8428929.091399299">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.1900816095293434E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.7573310136795044"/>
+							<Node score="6984453.634085213">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.3654865175485611"/>
+							</Node>
+						</Node>
+						<Node score="1.8570955056179777E7">
+							<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.8592062890529633"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="65">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="2.348956660412758E7">
+						<True/>
+						<Node score="5331605.217641972">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.179557979106903"/>
+							<Node score="4157562.299717248">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.21351297199726105"/>
+								<Node score="2903217.7368988814">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.48356810212135315"/>
+								</Node>
+							</Node>
+							<Node score="8453749.247194087">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.1212968926553672E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.019373059272766"/>
+							<Node score="6050219.298245614">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.5836021304130554"/>
+							</Node>
+						</Node>
+						<Node score="1.1715092896174863E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.36777108907699585"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="66">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="3.2157027027027026E7">
+						<True/>
+						<Node score="5305863.217576187">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.179557979106903"/>
+							<Node score="4125655.2962298025">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.2064986228942871"/>
+								<Node score="2860038.68111383">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5070298910140991"/>
+								</Node>
+							</Node>
+							<Node score="8426103.72686995">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.235346620498615E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.279536962509155"/>
+							<Node score="7080409.836065574">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.3654865175485611"/>
+							</Node>
+						</Node>
+						<Node score="1.7345737704918034E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.24445368349552155"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="67">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="3.322361386138614E7">
+						<True/>
+						<Node score="5207898.582194406">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.179557979106903"/>
+							<Node score="4080700.018962139">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.17118501663208008"/>
+								<Node score="2862948.9160378487">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5304916501045227"/>
+								</Node>
+							</Node>
+							<Node score="8394639.264743427">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.41463746882793E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.380277633666992"/>
+							<Node score="9285695.114213198">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="1.592640625E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.36573144793510437"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="68">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="3.3159505494505495E7">
+						<True/>
+						<Node score="5138269.325657895">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.0907902121543884"/>
+							<Node score="4063541.9390650056">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.1639287918806076"/>
+								<Node score="2852136.0602535056">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5452460050582886"/>
+								</Node>
+							</Node>
+							<Node score="8157180.978260869">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.151964952424105E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.320534706115723"/>
+							<Node score="6180745.29147982">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.5924820899963379"/>
+							</Node>
+						</Node>
+						<Node score="1.5743636363636363E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.36573144793510437"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="69">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+					</MiningSchema>
+					<Node score="3.2373985507246375E7">
+						<True/>
+						<Node score="5049550.162591835">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.0918786525726318"/>
+							<Node score="4006639.3421476944">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.1266801804304123"/>
+								<Node score="2823334.215500945">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5621771812438965"/>
+								</Node>
+							</Node>
+							<Node score="8142943.746860874">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="8231893.264248705">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.169214129447937"/>
+							<Node score="1.252918260038241E7">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.790832669322709E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="5.068892955780029"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="70">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="2.3372826552462526E7">
+						<True/>
+						<Node score="5187033.838690115">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.17339026927948"/>
+							<Node score="4000870.9381310814">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.13841107487678528"/>
+								<Node score="2808095.4176145596">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5853970646858215"/>
+								</Node>
+							</Node>
+							<Node score="8241997.087378641">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.13412188172043E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.288578987121582"/>
+							<Node score="6022015.503875969">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.5836021304130554"/>
+							</Node>
+						</Node>
+						<Node score="1.0555877358490566E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.46373163163661957"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="71">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="4.122428571428572E7">
+						<True/>
+						<Node score="5274228.067832821">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1887492537498474"/>
+							<Node score="4087808.722218894">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.19440492242574692"/>
+								<Node score="2847198.2849686197">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5532278418540955"/>
+								</Node>
+							</Node>
+							<Node score="8450443.473792395">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.2198669982944855E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.160293102264404"/>
+							<Node score="7199755.538579068">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.3654865175485611"/>
+							</Node>
+						</Node>
+						<Node score="2.3029409282700423E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="6.53017520904541"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="72">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="4.036163636363637E7">
+						<True/>
+						<Node score="5198104.520139879">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.179557979106903"/>
+							<Node score="4087002.6734563974">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.16634753346443176"/>
+								<Node score="2855979.670005893">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5302497744560242"/>
+								</Node>
+							</Node>
+							<Node score="8267602.564102564">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.210684391174067E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.297314882278442"/>
+							<Node score="6537868.421052632">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.4634065330028534"/>
+							</Node>
+						</Node>
+						<Node score="2.494984693877551E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="6.216464519500732"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="73">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateX)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="3.081672340425532E7">
+						<True/>
+						<Node score="5017482.990699951">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.0898227095603943"/>
+							<Node score="4029491.836734694">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.12692205607891083"/>
+								<Node score="2824725.9706222955">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5557675361633301"/>
+								</Node>
+							</Node>
+							<Node score="8117280.81321474">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.3812869020501139E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.311101675033569"/>
+							<Node score="9118895.12263885">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="1.4111111111111112E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateX)))" operator="lessOrEqual" value="-0.7790638208389282"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="74">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="3.1954285714285713E7">
+						<True/>
+						<Node score="5171017.822297385">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.181372046470642"/>
+							<Node score="4043583.5183814457">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.170701265335083"/>
+								<Node score="2841786.513400541">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5517765879631042"/>
+								</Node>
+							</Node>
+							<Node score="8355216.060225847">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.1973081413210446E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.279536962509155"/>
+							<Node score="6279331.954498448">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.5836021304130554"/>
+							</Node>
+						</Node>
+						<Node score="1.693728813559322E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.21074190735816956"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="75">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+					</MiningSchema>
+					<Node score="3.904775510204082E7">
+						<True/>
+						<Node score="5071710.570147341">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.0898227095603943"/>
+							<Node score="4060305.4729515975">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.14578823745250702"/>
+								<Node score="2832673.4517106973">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5517765879631042"/>
+								</Node>
+							</Node>
+							<Node score="8094358.36627141">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="8480293.4648582">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.202862977981567"/>
+							<Node score="1.3113350338600451E7">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="2.500701421800948E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="6.58991813659668"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="76">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+					</MiningSchema>
+					<Node score="1.0E8">
+						<True/>
+						<Node score="5083998.138495904">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.0961114764213562"/>
+							<Node score="4002711.776859504">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.1266801804304123"/>
+								<Node score="2845385.453639704">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5595165491104126"/>
+								</Node>
+							</Node>
+							<Node score="8132708.477937531">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="8625381.45944253">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.271434307098389"/>
+							<Node score="1.322221938088829E7">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="2.836339285714286E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="15.051640033721924"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="77">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="3.934703125E7">
+						<True/>
+						<Node score="5104239.907132722">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1004652380943298"/>
+							<Node score="4073261.1930471426">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.14216011762619019"/>
+								<Node score="2862827.7458019345">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5210585594177246"/>
+								</Node>
+							</Node>
+							<Node score="8147279.613624809">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.1863441399112504E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.1231653690338135"/>
+							<Node score="6805964.972527472">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.3654865175485611"/>
+							</Node>
+						</Node>
+						<Node score="2.4392932692307692E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="6.1540610790252686"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="78">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="1.32225E7">
+						<True/>
+						<Node score="5395232.980148581">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.3010997772216797"/>
+							<Node score="4085141.5590035236">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.18763244152069092"/>
+								<Node score="2863568.9655172415">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5262588858604431"/>
+								</Node>
+							</Node>
+							<Node score="8536999.285544178">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.2970789512284562E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.311101675033569"/>
+							<Node score="7888415.329768271">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.2175866886973381"/>
+							</Node>
+						</Node>
+						<Node score="3.203798206278027E7">
+							<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.42586152255535126"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="79">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+					</MiningSchema>
+					<Node score="3.4806666666666664E7">
+						<True/>
+						<Node score="5231372.964786066">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.181372046470642"/>
+							<Node score="4062143.8759689922">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.1639287918806076"/>
+								<Node score="2837684.3279419965">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5595165491104126"/>
+								</Node>
+							</Node>
+							<Node score="8329018.587360594">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="8617750.582750583">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.33780038356781"/>
+							<Node score="1.2863079706345044E7">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.9776248979591835E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="5.8066089153289795"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="80">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="1.0E8">
+						<True/>
+						<Node score="5332201.583873291">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.181372046470642"/>
+							<Node score="4102140.078708721">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.21714108437299728"/>
+								<Node score="2830247.5604450246">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5621771812438965"/>
+								</Node>
+							</Node>
+							<Node score="8442174.030902684">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.2423397813288478E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.897525310516357"/>
+							<Node score="7174303.310238645">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.3653840869665146"/>
+							</Node>
+						</Node>
+						<Node score="3.2011006289308175E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="15.329795360565186"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="81">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="3.8287719298245616E7">
+						<True/>
+						<Node score="5271818.6453022575">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1327553987503052"/>
+							<Node score="4121133.6109665106">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.2132710963487625"/>
+								<Node score="2848343.350540806">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5517765879631042"/>
+								</Node>
+							</Node>
+							<Node score="8383271.028037383">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.2190598080722552E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.320292711257935"/>
+							<Node score="7439767.426710098">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.23039449751377106"/>
+							</Node>
+						</Node>
+						<Node score="2.4300615384615384E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="6.523765563964844"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="82">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="1.0E8">
+						<True/>
+						<Node score="5180743.781695243">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.181372046470642"/>
+							<Node score="4040100.895863778">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.14723947644233704"/>
+								<Node score="2827536.7733913586">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5583071708679199"/>
+								</Node>
+							</Node>
+							<Node score="8262475.841874085">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.2201941935483871E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.311101675033569"/>
+							<Node score="7002849.336455894">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.35363173484802246"/>
+							</Node>
+						</Node>
+						<Node score="2.8149744680851065E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="15.329795360565186"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="83">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="3.590048780487805E7">
+						<True/>
+						<Node score="5329550.120858808">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.181372046470642"/>
+							<Node score="4127843.688096524">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.21738295257091522"/>
+								<Node score="2856396.0366579387">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5251704454421997"/>
+								</Node>
+							</Node>
+							<Node score="8476407.027027028">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.2164116331729408E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.1231653690338135"/>
+							<Node score="6983866.403162056">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.3654865175485611"/>
+							</Node>
+						</Node>
+						<Node score="2.234841176470588E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="5.181001901626587"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="84">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="1.0E8">
+						<True/>
+						<Node score="5262707.390648567">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1810092329978943"/>
+							<Node score="4087857.0223534373">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.18763244152069092"/>
+								<Node score="2849620.477898705">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5430691242218018"/>
+								</Node>
+							</Node>
+							<Node score="8408293.497815471">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.224212648221344E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.297314882278442"/>
+							<Node score="7195694.901960785">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.3549721837043762"/>
+							</Node>
+						</Node>
+						<Node score="2.590125E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="15.329795360565186"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="85">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="3.191654135338346E7">
+						<True/>
+						<Node score="5241112.687366167">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1794370412826538"/>
+							<Node score="4054070.6460590987">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.18763244152069092"/>
+								<Node score="2823232.4558647987">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5612096786499023"/>
+								</Node>
+							</Node>
+							<Node score="8381598.364844149">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.2216698268521147E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.8908454179763794"/>
+							<Node score="6904581.176470588">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.3654152601957321"/>
+							</Node>
+						</Node>
+						<Node score="2.0771927710843373E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.845280408859253"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="86">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="2.534820668693009E7">
+						<True/>
+						<Node score="5136611.071068185">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.0845015048980713"/>
+							<Node score="4086926.0196211515">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.18763244152069092"/>
+								<Node score="2849578.494751201">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5275892019271851"/>
+								</Node>
+							</Node>
+							<Node score="8257254.284134882">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="8376087.5165125495">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.548109769821167"/>
+							<Node score="1.2735682310469314E7">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.330956043956044E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.4001379460096359"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="87">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="1.1914285714285715E7">
+						<True/>
+						<Node score="5169646.95271228">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.179557979106903"/>
+							<Node score="4071033.303057826">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.17142688482999802"/>
+								<Node score="2839109.266600595">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5520184636116028"/>
+								</Node>
+							</Node>
+							<Node score="8328792.319353209">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.3879076732673267E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.297314882278442"/>
+							<Node score="9239281.624500666">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="3.0658740157480314E7">
+							<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.42586152255535126"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="88">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="3.55366265060241E7">
+						<True/>
+						<Node score="5494778.759911608">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.3936166167259216"/>
+							<Node score="4149151.635282458">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.23189540207386017"/>
+								<Node score="2864550.578551831">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5251704454421997"/>
+								</Node>
+							</Node>
+							<Node score="8797181.063933626">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.3155111984282907E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.05822229385376"/>
+							<Node score="7010238.49372385">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.46372272074222565"/>
+							</Node>
+						</Node>
+						<Node score="2.354314655172414E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="6.026956081390381"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="89">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="3.2900454545454547E7">
+						<True/>
+						<Node score="5242370.433865225">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1736321449279785"/>
+							<Node score="4069044.008124577">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.17142688482999802"/>
+								<Node score="2852879.556739736">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5471810102462769"/>
+								</Node>
+							</Node>
+							<Node score="8358612.952575217">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.2404904166666666E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.311101675033569"/>
+							<Node score="7316570.827489481">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.2531154155731201"/>
+							</Node>
+						</Node>
+						<Node score="1.5964237288135594E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.21074190735816956"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="90">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+						<MiningField name="double(float(standardScaler(coordinateX)))"/>
+					</MiningSchema>
+					<Node score="2.9926761904761903E7">
+						<True/>
+						<Node score="5145076.547430106">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1797998547554016"/>
+							<Node score="4008925.716349627">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.14723947644233704"/>
+								<Node score="2824084.303649255">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5853970646858215"/>
+								</Node>
+							</Node>
+							<Node score="8260661.587613665">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.2284675780089153E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.279536962509155"/>
+							<Node score="7290261.9718309855">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.25143206119537354"/>
+							</Node>
+						</Node>
+						<Node score="1.2872340425531914E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateX)))" operator="lessOrEqual" value="-0.7889634370803833"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="91">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="3.510484375E7">
+						<True/>
+						<Node score="5135640.913893291">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.0965952277183533"/>
+							<Node score="4039567.447045708">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.1609053611755371"/>
+								<Node score="2841218.9993196856">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5522603392601013"/>
+								</Node>
+							</Node>
+							<Node score="8151994.692144373">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.3852694144400228E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.316180944442749"/>
+							<Node score="9084274.876305662">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="2.100429906542056E7">
+							<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.8592062890529633"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="92">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="3.1407925531914894E7">
+						<True/>
+						<Node score="5159365.561437726">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.0922414660453796"/>
+							<Node score="4051194.1570298234">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.17142688482999802"/>
+								<Node score="2850150.6148788505">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.551655650138855"/>
+								</Node>
+							</Node>
+							<Node score="8278661.045531197">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.3664421387283238E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.311101675033569"/>
+							<Node score="8943027.121374866">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="1.4742641509433962E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.33347146213054657"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="93">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="2.6658197879858658E7">
+						<True/>
+						<Node score="5277200.334354973">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1797998547554016"/>
+							<Node score="4097593.0713246">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.20867548882961273"/>
+								<Node score="2838415.285678951">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5520184636116028"/>
+								</Node>
+							</Node>
+							<Node score="8375515.200430455">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="8704358.974358974">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.558994174003601"/>
+							<Node score="1.3101890973630833E7">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.446123188405797E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.08958882465958595"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="94">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="1.0E8">
+						<True/>
+						<Node score="5268492.363636363">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1340857148170471"/>
+							<Node score="4112188.1152460985">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.20674049854278564"/>
+								<Node score="2851782.5042057196">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5251704454421997"/>
+								</Node>
+							</Node>
+							<Node score="8432937.886528637">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.2023448391608391E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.271434307098389"/>
+							<Node score="7084741.22236671">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.27187733352184296"/>
+							</Node>
+						</Node>
+						<Node score="2.7341245421245422E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="15.329795360565186"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="95">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+					</MiningSchema>
+					<Node score="1.2588461538461538E7">
+						<True/>
+						<Node score="5285938.383568952">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.1902005076408386"/>
+							<Node score="4093348.5745024206">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.18763244152069092"/>
+								<Node score="2837022.3936302564">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5520184636116028"/>
+								</Node>
+							</Node>
+							<Node score="8331244.444444444">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.4823699036918137E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.279536962509155"/>
+							<Node score="9616046.589018302">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="2.17728853225708"/>
+							</Node>
+						</Node>
+						<Node score="2.9219957264957264E7">
+							<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.42586152255535126"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="96">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+					</MiningSchema>
+					<Node score="1.0E8">
+						<True/>
+						<Node score="5362302.16403954">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.2477665543556213"/>
+							<Node score="4101691.557089308">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.20698237419128418"/>
+								<Node score="2833834.3329253364">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.544520378112793"/>
+								</Node>
+							</Node>
+							<Node score="8494376.936753873">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.2292721561029615E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.378826379776001"/>
+							<Node score="6431205.098493627">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.595871090888977"/>
+							</Node>
+						</Node>
+						<Node score="2.7842742616033755E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="15.329795360565186"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="97">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="3.398351145038168E7">
+						<True/>
+						<Node score="5339673.672566372">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.181372046470642"/>
+							<Node score="4095421.729723408">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.20698237419128418"/>
+								<Node score="2841394.227188082">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5612096786499023"/>
+								</Node>
+							</Node>
+							<Node score="8392487.31501057">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.225792536047498E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.279536962509155"/>
+							<Node score="7121761.752988048">
+								<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.3654865175485611"/>
+							</Node>
+						</Node>
+						<Node score="2.060182481751825E7">
+							<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.8592062890529633"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="98">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(coordinateY)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="3.1971464646464646E7">
+						<True/>
+						<Node score="5249481.203007519">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.181372046470642"/>
+							<Node score="4084602.5884587984">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.18763244152069092"/>
+								<Node score="2839018.2791728214">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5544372200965881"/>
+								</Node>
+							</Node>
+							<Node score="8415568.229166666">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.4144084272997033E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.378826379776001"/>
+							<Node score="9346931.810871663">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="1.7410416666666668E7">
+							<SimplePredicate field="double(float(standardScaler(coordinateY)))" operator="lessOrEqual" value="-0.36573144793510437"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="99">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+						<MiningField name="double(float(standardScaler(total)))"/>
+					</MiningSchema>
+					<Node score="1.0E8">
+						<True/>
+						<Node score="5247668.466522678">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.181372046470642"/>
+							<Node score="4074785.010096211">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.18763244152069092"/>
+								<Node score="2839901.066018328">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5590327978134155"/>
+								</Node>
+							</Node>
+							<Node score="8408045.407098122">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.3875757760194765E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.7841789722442627"/>
+							<Node score="9133620.070535429">
+								<SimplePredicate field="double(float(standardScaler(total)))" operator="lessOrEqual" value="0.9887279868125916"/>
+							</Node>
+						</Node>
+						<Node score="2.4420346534653466E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="14.027182579040527"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+			<Segment id="100">
+				<True/>
+				<TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+					<MiningSchema>
+						<MiningField name="double(float(standardScaler(scale)))"/>
+						<MiningField name="double(float(standardScaler(district)))"/>
+					</MiningSchema>
+					<Node score="2.9861111111111112E7">
+						<True/>
+						<Node score="5146324.114912385">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="1.181372046470642"/>
+							<Node score="4000492.825056152">
+								<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="0.13804826140403748"/>
+								<Node score="2829061.224489796">
+									<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="-0.5853970646858215"/>
+								</Node>
+							</Node>
+							<Node score="8261472.731719247">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="8589217.963608207">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="3.205495238304138"/>
+							<Node score="1.2822772679874869E7">
+								<SimplePredicate field="double(float(standardScaler(district)))" operator="lessOrEqual" value="0.2623972222208977"/>
+							</Node>
+						</Node>
+						<Node score="1.8320023012552302E7">
+							<SimplePredicate field="double(float(standardScaler(scale)))" operator="lessOrEqual" value="4.896920680999756"/>
+						</Node>
+					</Node>
+				</TreeModel>
+			</Segment>
+		</Segmentation>
+	</MiningModel>
+</PMML>

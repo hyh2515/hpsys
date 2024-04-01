@@ -29,13 +29,13 @@
 									class="showSandianTU"
 								/>
 							</a-tab-pane>
-							<a-tab-pane key="RIDGE" tab="岭回归预测">
+							<a-tab-pane key="RIDGE" tab="XGBoost预测">
 								<DistrictAverPriceRidge
 									ref="ridgeRef"
 									class="showSandianTU"
 								/>
 							</a-tab-pane>
-							<a-tab-pane key="LASSO" tab="Lasso预测">
+							<a-tab-pane key="LASSO" tab="随机森林预测">
 								<DistrictAverPriceLasso
 									ref="lassoRef"
 									class="showSandianTU"

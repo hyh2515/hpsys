@@ -1,6 +1,7 @@
 package com.shou.hpsys.web.predict.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.lang.Pair;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -10,7 +11,6 @@ import com.shou.hpsys.web.predict.mapper.ZipCodeMapper;
 import com.shou.hpsys.web.predict.param.ZipCodeAddParam;
 import com.shou.hpsys.web.predict.param.ZipCodeIdParam;
 import com.shou.hpsys.web.predict.service.ZipCodeService;
-import javafx.util.Pair;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

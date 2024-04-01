@@ -10,6 +10,7 @@ import vueSetupExtend from "vite-plugin-vue-setup-extend";
 export default defineConfig(({ command, mode }) => {
 	const envConfig = loadEnv(mode, "./");
 	return {
+		base: "/hpsys-front/",
 		plugins: [
 			vue({
 				script: {

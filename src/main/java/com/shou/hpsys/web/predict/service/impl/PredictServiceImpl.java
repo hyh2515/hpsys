@@ -42,9 +42,9 @@ public class PredictServiceImpl implements PredictService {
         if(modelSelect.equals(ModelEnum.LINEAR.getValue())) {
             filename = "src/main/resources/pmml/line_model.pmml";
         } else if(modelSelect.equals(ModelEnum.RIDGE.getValue())) {
-            filename = "src/main/resources/pmml/ridge_model.pmml";
+            filename = "src/main/resources/pmml/xgb_model.pmml";
         } else if(modelSelect.equals(ModelEnum.LASSO.getValue())) {
-            filename = "src/main/resources/pmml/lasso_model.pmml";
+            filename = "src/main/resources/pmml/random_forest_model.pmml";
         } else {
             throw new CommonException("无该模型，该模型名为：{}", modelSelect);
         }

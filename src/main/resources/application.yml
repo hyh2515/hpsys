@@ -1,9 +1,9 @@
 server: # server configuration
-  port: 82   # 端口配置
+  port: 8082   # 端口配置
 spring:
   profiles: # spring profiles configuration
     active: dev # 开发环境
-    # active: prod # 生产环境
+#     active: prod # 生产环境
     # active: test # 测试环境
   servlet: # multipart configuration
     multipart:

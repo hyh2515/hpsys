@@ -1,10 +1,10 @@
 package com.shou.hpsys.web.predict.service;
 
+import cn.hutool.core.lang.Pair;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.shou.hpsys.web.predict.entity.ZipCode;
 import com.shou.hpsys.web.predict.param.ZipCodeAddParam;
 import com.shou.hpsys.web.predict.param.ZipCodeIdParam;
-import javafx.util.Pair;
 
 import java.util.List;
 
